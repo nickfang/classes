@@ -1,0 +1,12 @@
+slk;adsjf
+
+
+
+as;ldk
+asdkjlf;
+asdf;klj;saklf
+sldfjk;
+
+No command 'something' found, did you mean:
+ Command 'vsomething' from package 'util-vserver' (universe)
+something: command not found
