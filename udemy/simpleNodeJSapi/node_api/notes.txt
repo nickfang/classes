@@ -1,0 +1,120 @@
+CLASS NOTES:
+
+setup node.
+	#create node_api folder
+	#go to node_api folder
+	npm init
+	npm install restify --save
+	#create app.js file from www.restify.com.
+	node app.js
+	#go to web browser and use url:http://localhost:8080/hello/nickfang
+
+	#! look up dependency injection "function respond(req, res, next)"
+
+Section 2.8:
+	#if you change something in app.js, you have to shutdown the server and then start it again for it to get the changes.
+
+Section 2.9:
+	#install nodemon globally.
+	npm install -g nodemon
+	#now you don't have to restart the server when you make a change for the change to apply
+	nodemon app.js
+
+Section 2.10:
+	#install postman plugin for chrome
+	#good for rapidly testing api's
+
+Section 2.11:
+	#Faking a Database
+	var users = {};
+	var max_user_ed = 0;
+
+Section 2.12:
+	#write first api call
+	server.get("/", function(req, res, next) {
+		res.setHeader('content-type', 'application/json');  	// expect json to be passed in.
+		res.writeHead(200);												// 200 means everything was successful
+		res.end(JSON.stringify(users));
+		return next();														// common in nodejs
+	});
+
+Section 2.13:
+	#server.post
+
+	server.use(restify.acceptParser(server.acceptable));
+	server.use(restify.bodyParser());
+
+	server.post("/user", function(req, res, next){					// post is for setting info about user
+		var user = req.params;
+		max_user_id++;
+		user.id = max_user_id;
+		users[user.id] = user;
+		res.setHeader('content-type', 'application/json');
+		res.writeHead(200);
+		res.end(JSON.stringify(user));
+		return next();
+	});
+
+Section 2.14:
+	#server.use()
+	#restify cheatsheet
+	#http://bit.ly/1NJx0Za => https://gist.github.com/LeCoupa/0664e885fd74152d1f90
+
+Section 2.15
+	#Sidenote on Testing
+	#with what we have now, if we update app.js, nodemon restarts servers and we lose the users.
+
+Section 2.16:
+	#Fetching a user
+		server.get("/user/:id", function(req, res, next) {			//get from /user/:id
+		res.setHeader('content-type', 'application/json');
+		res.writeHead(200);
+		res.end(JSON.stringify(users[parseInt(req.params.id)]));	//use the id value and get that specific user.  Make sure it's a int.
+		return next();
+	});
+
+Section 2.16:
+	#put - Updating user
+	server.put("/user/:id", function(req, res, next) {
+		var user = users[parseInt(req.params.id)];
+		var updates = req.params;
+		for (var field in updates) {
+			user[field] = updates[field];
+		}
+		res.setHeader('content-type', 'application/json');
+		res.writeHead(200);
+		res.end(JSON.stringify(user));
+		return next();
+	});
+
+Section 2.17:
+	#delete user
+	server.del("/user/:id", function(req, res, next) {					// get is for retreiving info about user
+		delete users[parseInt(req.params.id)];
+		res.setHeader('content-type', 'application/json');  	// expect json to be passed in.
+		res.writeHead(200);												// 200 means everything was successful
+		res.end(JSON.stringify(true));
+		return next();														// common in nodejs
+	});
+
+Section 2.18:
+	#cleanup
+	#Standardizing output.
+	#Create respond() and a success() and failure() that calls respond().
+
+Section 2.20:
+	#Cleanup
+	#add error checking for the id being passed in.
+
+Section 2.21:
+	#more cleanup
+
+
+Section 4:
+	#Creating Mongo DB
+	#use mlab.com
+
+	#use node module mongoose to connect to mongo db.
+
+	#create user model
+	#create collection that store documents
