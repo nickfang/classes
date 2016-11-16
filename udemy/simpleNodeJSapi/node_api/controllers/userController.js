@@ -40,7 +40,7 @@ module.exports = function(server) {
 			user.last_name = req.params.last_name;
 			user.email_address = req.params.email_address;
 			user.career = req.params.career;
-			user.save(function(err) {
+			user.save(function(err) 	{
 				if (err) {
 					helpers.failure(res, next, errors, 500);
 				}

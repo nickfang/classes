@@ -118,3 +118,7 @@ Section 4:
 
 	#create user model
 	#create collection that store documents
+
+Section 5:
+	#HTTP basic authentication.
+	#do in postman.
