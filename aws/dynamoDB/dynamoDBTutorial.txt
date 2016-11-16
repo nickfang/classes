@@ -1,0 +1,23 @@
+http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.JsShell.html
+
+Open Command prompt and run:
+	java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
+Go to a web browser and go to url:
+	http://localhost:8000
+
+
+For the nodeJS examples if you want to connect to the Amazon DynamoDB service, replace:
+	AWS.config.update({
+		region: "us-west-2",
+		endpoint: "http://localhost:8000"
+	});
+with:
+	AWS.config.update({endpoint: "https://dynamodb.<aws-region>.amazonaws.com"});
+where <aws-region> is something like "us-west-2"
+
+
+TODO:
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.html
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html
+http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html
