@@ -1,0 +1,943 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"C",
+				"TIME_COLOR"
+			],
+			[
+				"testGet",
+				"testGetHours"
+			],
+			[
+				"Ti",
+				"TIME_COLOR"
+			],
+			[
+				"func",
+				"functionCall"
+			],
+			[
+				"reGet",
+				"reGetColorInfoIntents"
+			],
+			[
+				"getori",
+				"getOrientationResponseIntents"
+			],
+			[
+				"getResis",
+				"getResistorDecodeIntents"
+			],
+			[
+				"getR",
+				"getResistorDecodeIntent"
+			],
+			[
+				"calcu",
+				"calcualteResistanceIntents"
+			],
+			[
+				"cal",
+				"calcualteResistanceIntent"
+			],
+			[
+				"getRe",
+				"getResistorDecodeIntents"
+			],
+			[
+				"get",
+				"get_level_values"
+			],
+			[
+				"concate",
+				"concatenate"
+			],
+			[
+				"ftp",
+				"ftpDownloader"
+			],
+			[
+				"decoded",
+				"decodedResistor"
+			],
+			[
+				"buildSpeech",
+				"buildSpeechletResponseWithoutCard"
+			],
+			[
+				"reprompt",
+				"repromptFor"
+			],
+			[
+				"repromp",
+				"repromptFor"
+			],
+			[
+				"build",
+				"buildCalculateResistanceIntent"
+			],
+			[
+				"orie",
+				"isOrientationValueValid"
+			],
+			[
+				"biuld",
+				"buildSpeechletResponse"
+			],
+			[
+				"resistorA",
+				"resistorA"
+			],
+			[
+				"resistorB",
+				"resistorB"
+			],
+			[
+				"NaN",
+				"NaN"
+			],
+			[
+				"second",
+				"second"
+			],
+			[
+				"sessi",
+				"sessionAttributes"
+			],
+			[
+				"res",
+				"resistorColors"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 831,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "section2.sublime-project",
+			"settings":
+			{
+				"buffer_size": 107,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/chrome-Project.sublime-build",
+			"settings":
+			{
+				"buffer_size": 126,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 1035,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/arduino-cli/arduino-cli.sublime-build",
+					""
+				],
+				[
+					"Packages/arduino-cli/arduino-cli.sublime-build",
+					"just build"
+				],
+				[
+					"Packages/arduino-cli/arduino-cli.sublime-build",
+					"build and upload"
+				]
+			],
+			[
+				"Packages/arduino-cli/arduino-cli.sublime-build",
+				"build and upload"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Package Control: Add Repository"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"csv",
+				"CSV: Justify columns"
+			],
+			[
+				"python",
+				"Build With: Python"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"default",
+				"Preferences: Settings - Default"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				":0",
+				":0 - BOF"
+			],
+			[
+				":$",
+				":$ - EOF"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 242.0,
+		"history":
+		[
+			"runfile",
+			"runfile(\"FtpDownloader.py\")",
+			"import FtpDownloader.py",
+			"import FtpDownloader",
+			"ftpDownloader(\"ftp.pyclass.com\",\"student@pyclass.com\",\"student123\")",
+			"exit",
+			"exit()",
+			"import os",
+			"import.os"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/nfang/repos/classes/udemy/buildWebsiteHTML5CSS3"
+	],
+	"file_history":
+	[
+		"/C/Users/nfang/repos/classes/udemy/buildWebsiteHTML5CSS3/blog post/style.css",
+		"/C/Users/nfang/repos/classes/udemy/buildWebsiteHTML5CSS3/blog post/index.html",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/Chrome.sublime-build",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/chrome-Project.sublime-build",
+		"/C/Users/nfang/repos/classes/udemy/buildWebsiteHTML5CSS3/Section2/main.css",
+		"/C/Users/nfang/repos/jobSearch/arl/161014019359/n",
+		"/C/Users/nfang/Documents/Books/IamMe/Questions.txt",
+		"/C/Users/nfang/repos/iot/magicMirror/modules/timeSplit.js",
+		"/C/Users/nfang/repos/iot/magicMirror/modules/worldclock.css",
+		"/C/Users/nfang/repos/iot/magicMirror/certs/root-CA.crt",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps01.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps02.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps03.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps06.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps05.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesItemOps04.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviedata.json",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesDeleteTable.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesQuery03.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesQuery02.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesQuery01.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesLoadData.js",
+		"/C/Users/nfang/repos/classes/aws/dynamoDB/nodeJS/moviesCreateTable.js",
+		"/C/Users/nfang/repos/alexa/localNodeJS/package.json",
+		"/C/Users/nfang/repos/alexa/ResistorDecode/devDoc.txt",
+		"/C/Users/nfang/repos/alexa/ResistorDecode/tools/out/concatIndex.txt",
+		"/C/Users/nfang/repos/alexa/ResistorDecode/tools/out/functionCalls.csv",
+		"/C/Users/nfang/repos/alexa/ResistorDecode/tools/out/concatLog.txt",
+		"/C/Users/nfang/repos/alexa/ResistorDecode/out/extracted/000000",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/workingWithFiles.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/FTPStuff.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/FtpDownloader.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/workingWithZip.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/workingWithCSVs.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/workingWithVisual.py",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/station-info.txt",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/out/concatenated.csv",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/out/concatenated-merged.csv",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/out/pivoted.csv",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/in/extracted/010010-99999-2010.csv",
+		"/C/Users/nfang/repos/classes/Udemy/PythonBuildDataAnalysisProgram/isd-lite-format.pdf",
+		"/C/Users/nfang/Desktop/Projects/Alexa Development/examples/alexa-skills-kit-js/samples/helloWorld/src/index.js",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/nfang/repos/AmazonEcho/AudioPlayerSkill/js/constants.js",
+		"/C/Users/nfang/repos/AmazonEcho/AudioPlayerSkill/speechAssets/Utterances.txt",
+		"/C/Users/nfang/repos/AmazonEcho/AudioPlayerSkill/speechAssets/IntentSchema.json",
+		"/C/Users/nfang/Desktop/Projects/Alexa Development/Tutorial/src/node_modules/alexa-sdk/lib/alexa.js",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"//192.168.1.111/shared/USBHDD1/Store/Programming/Java/c2e1.java"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open folders>",
+			"<open files>",
+			"C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples",
+			"C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples\\historyBuff;C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples",
+			"C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples\\historyBuff;C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples\\",
+			"C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples\\historyBuff",
+			"C:\\Users\\nfang\\Desktop\\Projects\\Alexa Development\\examples\\alexa-skills-kit-js\\samples",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"gethour",
+			"document.",
+			"time",
+			"==",
+			".ian",
+			"class=\"ian\"",
+			"id=",
+			"id=\"ian\"",
+			"o'clock",
+			"div",
+			"/br",
+			"switch",
+			"reminder",
+			"teeth",
+			"intent",
+			"mqtt",
+			"lambda_handler",
+			"moment",
+			"Paho",
+			"response",
+			"execute",
+			"year\": 195.",
+			"195.",
+			"dynamo",
+			"database",
+			"db",
+			"wild cards",
+			"Response",
+			"AlexaSkill",
+			"response",
+			"prototype",
+			"console.log",
+			"intent:",
+			"console.log",
+			"onlaunch",
+			"onsessionstarted",
+			"console.log",
+			"debugMode",
+			"calculateresistanceintent\\(\\)",
+			"buildcalculateresistanceintent",
+			"dateSearch",
+			"read",
+			"logFile.read()",
+			"logFile.read\\(\\)",
+			"logFile.read()",
+			"logFile.read\\(\\)",
+			"open",
+			"\\b\\(\\)",
+			".*?\\(\\)",
+			"\\(\\)",
+			"getwelcomeresponse",
+			"startover",
+			"pronunciation",
+			"userprompttocontinue",
+			"callback",
+			"console.log",
+			"handlerepeatrequest",
+			"callback.sessionattributes",
+			"clearsessionattributes",
+			"decodedresistor",
+			"getcolorinfo",
+			"buildspeechletresponse",
+			"repromptText",
+			"getWelcomeResponse",
+			"clearSessionAttributes",
+			"buildCalculateResistanceIntent",
+			"isresistorvaluevalid",
+			"sessionAttributes",
+			"slots.orientation",
+			"repromtp",
+			"userpromptedtocontinue",
+			"handleFirstEventRequest",
+			"Response",
+			"ask",
+			"tell",
+			"_context",
+			"Response",
+			"handlenextevent",
+			"motionState",
+			"lastResistance",
+			"lastresistance",
+			"lastresistor",
+			"sessionAttributes",
+			"int",
+			"{",
+			"sessionattributes",
+			"trim",
+			"appId",
+			"invalid",
+			"envalid",
+			"echo-sdk-ams",
+			"withoutcard",
+			"title",
+			"welcome",
+			"length",
+			"\n}",
+			"         ",
+			"//",
+			"callBack",
+			"callback",
+			"onlaunch",
+			"}",
+			"help",
+			"sessionAttributes",
+			"onlaunch",
+			"speechoutput",
+			"onsessionended",
+			"buttonState",
+			"onsessionended",
+			"next",
+			"repromt",
+			"repromtp",
+			"gamequestions",
+			"getwelcomeresponse",
+			"fail",
+			"application",
+			"cannot",
+			"color",
+			"intent",
+			"create_favorite_color_attributes",
+			"build_speechlet_response",
+			"build_response",
+			"reprompt_text",
+			"favorite",
+			"buttonState",
+			"buttonPin",
+			"arduino"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"class=\"name\"",
+			"class=\"time\" id=",
+			"class=\"ian\"",
+			"span",
+			"br",
+			"wilds",
+			"DEBUG_MODE",
+			"dateTimeSearch",
+			"lastResistor",
+			"motionState",
+			"motionPin"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								524,
+								524
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 78.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "section2.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/chrome-Project.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								126,
+								126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 403.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 88.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/chrome-Project.sublime-build",
+	"project": "section2.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"style",
+				"Section2\\style.css"
+			],
+			[
+				"index",
+				"blog post\\index.html"
+			],
+			[
+				"",
+				"devDoc.txt"
+			],
+			[
+				"word",
+				"modules\\wordclock.css"
+			],
+			[
+				"worldclo",
+				"modules\\worldclock.css"
+			],
+			[
+				"time",
+				"modules\\timeSplit.js"
+			],
+			[
+				"html",
+				"modules\\wordclock.html"
+			],
+			[
+				"mirror",
+				"Mystic_Mirror\\index.html"
+			],
+			[
+				"avs",
+				"AVS\\AVSApp.java"
+			],
+			[
+				"aws.js",
+				"Mystic_Mirror\\js\\aws.js"
+			],
+			[
+				"text",
+				"src\\textHelper.js"
+			],
+			[
+				"intentha",
+				"src\\intentHandlers.js"
+			],
+			[
+				"storage",
+				"src\\storage.js"
+			],
+			[
+				"event",
+				"src\\eventHandlers.js"
+			],
+			[
+				"alexa",
+				"src\\AlexaSkill.js"
+			],
+			[
+				"score",
+				"src\\scoreKeeper.js"
+			],
+			[
+				"cmdline",
+				"node_modules\\aws-iot-device-sdk\\examples\\lib\\cmdline.js"
+			],
+			[
+				"thing-pass",
+				"node_modules\\aws-iot-device-sdk\\examples\\thing-passthrough-example.js"
+			],
+			[
+				"echo-example",
+				"node_modules\\aws-iot-device-sdk\\examples\\echo-example.js"
+			],
+			[
+				"echoexap",
+				"node_modules\\aws-iot-device-sdk\\examples\\echo-example.js"
+			],
+			[
+				"device",
+				"node_modules\\aws-iot-device-sdk\\examples\\device-example.js"
+			],
+			[
+				"cmd",
+				"node_modules\\aws-iot-device-sdk\\examples\\lib\\cmdline.js"
+			],
+			[
+				".txt",
+				"dynamoDBTutorial.txt"
+			],
+			[
+				"json",
+				"nodeJS\\moviedata.json"
+			],
+			[
+				"intenthandlers",
+				"src\\intentHandlers.js"
+			],
+			[
+				"utterances",
+				"speechAssets\\SampleUtterances.txt"
+			],
+			[
+				"index.js",
+				"src\\index.js"
+			],
+			[
+				"list",
+				"speechAssets\\customSlotTypes\\LIST_OF_PLAYER_NAMES"
+			],
+			[
+				"inten",
+				"speechAssets\\IntentSchema.json"
+			],
+			[
+				"get",
+				"getTemplate.py"
+			],
+			[
+				"info",
+				"info.txt"
+			],
+			[
+				"concat",
+				"tools\\out\\concatIndex.txt"
+			],
+			[
+				"function",
+				"tools\\out\\functionCalls.csv"
+			],
+			[
+				"dev",
+				"devDoc.txt"
+			],
+			[
+				"tools",
+				"tools\\processLogs.py"
+			],
+			[
+				"data",
+				"dataAnalysis.py"
+			],
+			[
+				"pivo",
+				"out\\pivoted.csv"
+			],
+			[
+				"pivoted",
+				"out\\pivoted.csv"
+			],
+			[
+				"stati",
+				"station-info.txt"
+			],
+			[
+				"conc",
+				"out\\concatenated-merged.csv"
+			],
+			[
+				".csv",
+				"in\\extracted\\010010-99999-2010.csv"
+			],
+			[
+				"slot",
+				"speechAssets\\slotValues.txt"
+			],
+			[
+				"utter",
+				"speechAssets\\sampleUtterances.txt"
+			],
+			[
+				"inde",
+				"src\\index.js"
+			],
+			[
+				"historybuff",
+				"historyBuff\\src\\AlexaSkill.js"
+			],
+			[
+				"slotvalu",
+				"speechAssets\\slotValues.txt"
+			],
+			[
+				"inte",
+				"speechAssets\\intentSchema.txt"
+			],
+			[
+				"const",
+				"js\\constants.js"
+			],
+			[
+				"constants",
+				"js\\constants.js"
+			],
+			[
+				"speechasset/utt",
+				"speechAssets\\Utterances.txt"
+			],
+			[
+				"intent",
+				"speechAssets\\IntentSchema.json"
+			],
+			[
+				"sample",
+				"speechAssets\\sampleUtterances.txt"
+			],
+			[
+				"c2",
+				"c2e1.java"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

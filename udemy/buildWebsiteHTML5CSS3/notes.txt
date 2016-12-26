@@ -1,0 +1,34 @@
+Typography
+
+use 15-25 px font size
+use (really) big font sizes for headlines (ie. 60px 90px)
+use line spacing between 120% and 150% of font size
+	100% makes the text too dense and 200% makes the font too spaced out and difficult to read.
+45-90 characters per line is ideal for reading.  (if it is only text)
+use good fonts
+	san serif: More neutral, clean, simple and modern websites
+		good open source fonts: Open Sans, Lato, Raleway, Monsterrat, PT Sans
+	serif: Traditional purposes, storytelling and long reading
+		good serif fonts: Cardo, Merriweather, PT Serrif
+Chose a font which reflects the look and feel you want for your website
+Decide: sans-serif or serif typeface
+use a good font
+use only that one typeface
+
+
+Color
+
+Use only one base color (not black, white, or shade of grey)
+Create color pallet for your design.  FlatUIColors
+Use color wheel tool if you want to use more colors
+Use a second color to draw attention
+Never use black in your design (black doesn't occur in nature)
+Choose colors wisely (that get's the desired response from audience)
+	Red is a great color to use when power, passion, strength and excitement want to be transmitted. Brighter tones are more energetic and darker shades are more powerful and elegant.
+	Orange draws attention without being as overpowering as red. It means cheerfulness and creativity. Orange can be associated with friendliness, confidence, and courage.
+	Yellow is energetic and gives the feeling of happiness and liveliness. Also, it associates with curiosity, intelligence, brightness, etc.
+	Green is the color of harmony, nature, life and health. Also, it is often associated with money. In design, green can have a balancing and harmonizing effect.
+	Blue means patience, peace, trustworthiness, and stability. It is one of the most beloved colors, especially by men. It is associated with professionalism, trust and honor. That's actually why the biggest social networks use blue.
+	Purple is traditionally associated with power, nobility and wealth. In your design, purple can give a sense of wisdom, royalty, nobility, luxury, and mystery.
+	Pink expresses romance, passivity, care, peace, affection, etc.
+	Brown is the color of relaxation and confidence. Brown means earthiness, nature, durability, comfort, and reliability.

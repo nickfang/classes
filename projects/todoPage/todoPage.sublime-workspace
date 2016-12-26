@@ -1,0 +1,417 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"url",
+				"url"
+			],
+			[
+				"factorial",
+				"factorial"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "todo1.js",
+			"settings":
+			{
+				"buffer_size": 1045,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "python",
+		"selected_items":
+		[
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git diff ",
+				"Git: Diff Staged Files"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"addcu",
+				"Git: Add Current File"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ali",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"align",
+				"Preferences: Alignment File Settings – User"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"python",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/P/todoPage"
+	],
+	"file_history":
+	[
+		"/C/Users/nfang/Downloads/Transactions.2016.02.01.12.30.00.csv",
+		"/C/Users/nfang/git/rpi/projects/webScraping/projectEuler/createProblemFiles.py",
+		"/C/Users/nfang/git/rpi/projects/webScraping/projectEuler/settings.json",
+		"/C/Users/nfang/Documents/Benica Wedding Seating Chart in order.csv",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/getConnectedDevices.py",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/devDevicesPrettified.html",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/specDeviceTracking.txt",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/scratchPad/pingTest.py",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/devDevices.html",
+		"/C/Users/nfang/git/rpi/projects/webScraping/netgearRouter/data/connectedDevices.csv",
+		"/C/Users/nfang/git/rpi/classes/projectEuler/python/lib/prime.py",
+		"/C/Users/nfang/git/rpi/classes/projectEuler/python/15.py",
+		"/C/Users/nfang/git/rpi/classes/projectEuler/python/019.py",
+		"/C/Users/nfang/git/rpi/classes/projectEuler/python/temp.py",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/User/Base File.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Terminal/Base File.sublime-settings",
+		"/C/Users/nfang/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"error",
+			"qversion",
+			"error",
+			"guest",
+			"json",
+			"timeStamp",
+			"TimeStamp",
+			"timeStamp",
+			"pingReply",
+			"macAddress",
+			"ipAddress",
+			"name",
+			"index",
+			"table",
+			"megatron",
+			"jane",
+			"megatron",
+			"factor",
+			"product",
+			"multi",
+			"divisor",
+			"factorial",
+			"$\\s",
+			"\\s+\\d+",
+			"\t",
+			"\\t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\n",
+			"",
+			" ",
+			"\\s"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "todo1.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								351,
+								351
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 179.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 88.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "todoPage.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"todo",
+				"todo1.js"
+			],
+			[
+				"ass",
+				"node_modules\\johnny-five\\node_modules\\serialport\\node_modules\\node-pre-gyp\\node_modules\\request\\node_modules\\http-signature\\node_modules\\assert-plus\\assert.js"
+			],
+			[
+				"app.",
+				"app.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"main",
+				"main.js"
+			],
+			[
+				"say",
+				"say-cheeze.js"
+			],
+			[
+				"getconnec",
+				"getConnectedDevices.py"
+			],
+			[
+				"",
+				"settings.json"
+			],
+			[
+				"localtool",
+				"localToolbox.py"
+			],
+			[
+				"createprom",
+				"createProblemFiles.py"
+			],
+			[
+				"getproblemhtml",
+				"getProblemHtml.py"
+			],
+			[
+				"data",
+				"data\\connectedDevices.csv"
+			],
+			[
+				"getco",
+				"getConnectedDevices.py"
+			],
+			[
+				"spec",
+				"specDeviceTracking.txt"
+			],
+			[
+				"scratchpad/",
+				"scratchPad\\pingTest.py"
+			],
+			[
+				"021",
+				"021.py"
+			],
+			[
+				"02",
+				"020.py"
+			],
+			[
+				"getex",
+				"netgearRouter\\getExternalIP.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
