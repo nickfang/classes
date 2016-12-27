@@ -1,0 +1,8 @@
+#.gitignore for the coursera class
+.idea
+.metadata
+.recommenders
+.classpath
+build
+data
+lib
