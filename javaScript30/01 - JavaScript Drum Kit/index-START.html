@@ -59,7 +59,7 @@
 
 <script>
   function playSound(e) {
-    // you can determine a keycode by going to http://keycode.info and pressing a key
+    // you can determine a keycode by going to http://keycode.info and pressing the key you want the keycode to.
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     if (!audio) return;
