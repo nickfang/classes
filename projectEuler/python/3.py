@@ -3,6 +3,7 @@
 
 def factor(n):
    i = 2
+   # limit is sqrt(n)
    limit = n**0.5
    while i <= limit:
       if n % i == 0:
@@ -14,4 +15,4 @@ def factor(n):
    if n > 1:
       yield n
 
-print [i for i in factor(600851475143)]
+print([i for i in factor(600851475143)])

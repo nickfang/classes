@@ -6,9 +6,9 @@ for x in primeNums:
    for y in primeNums:
       if (y % x == 0):
          if y != x:
-	    primeNums.remove(y)
-print "Prime Number:"
-print primeNums
+            primeNums.remove(y)
+print("Prime Number:")
+print(primeNums)
 
 trimmedList = range(num+1)[num+1:1:-1]
 for x in trimmedList:
@@ -16,8 +16,8 @@ for x in trimmedList:
       if x % y == 0:
          if x != y:
             trimmedList.remove(y)
-print "Trimmed List:"
-print trimmedList
+print("Trimmed List:")
+print(trimmedList)
 
 def primeFactors(num):
    primes = []
@@ -31,9 +31,9 @@ def primeFactors(num):
          i += 1
    if num > 1:
       primes.append(num)
-   print primes
+   print(primes)
 
-print "Prime factors of Trimmed List:"
+print("Prime factors of Trimmed List:")
 for x in trimmedList:
    temp = primeFactors(x)
 

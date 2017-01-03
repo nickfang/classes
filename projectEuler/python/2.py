@@ -7,11 +7,11 @@ b = 0
 c = 0
 x = 1
 while a <= 4000000:
-   c = a   
+   c = a
    a = a + b
    b = c
    if a % 2 == 0:
       fib.append(a)
    x = x + 1
-print fib
-print sum(fib)
+print(fib)
+print(sum(fib))
