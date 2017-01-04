@@ -1,7 +1,7 @@
 #2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 #What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 num = 20
-primeNums = range(num+1)[2:num+1:1]
+primeNums = list(range(num+1)[2:num+1:1])
 for x in primeNums:
    for y in primeNums:
       if (y % x == 0):
@@ -10,7 +10,7 @@ for x in primeNums:
 print("Prime Number:")
 print(primeNums)
 
-trimmedList = range(num+1)[num+1:1:-1]
+trimmedList = list(range(num+1)[num+1:1:-1])
 for x in trimmedList:
    for y in trimmedList:
       if x % y == 0:
