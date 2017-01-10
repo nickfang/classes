@@ -8,5 +8,4 @@ def getTemplate(problemNumber, src="webScraping\\problemTemplates", dest="python
 	else:
 		print("Template file " + templateFile + " does not exist.")
 
-
-if __name__ == "__main__":
+# if __name__ == "__main__":

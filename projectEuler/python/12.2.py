@@ -38,6 +38,7 @@ if __name__ == "__main__":
     from time import time
     start = time()
     e12 = euler_12(500)
+    print(factors(100))
     stop = time()
-    print "The answer is %d." % e12
-    print "That answer took me %g seconds" % (stop - start)
+    print( "The answer is %d." % e12)
+    print ("That answer took me %g seconds" % (stop - start))
