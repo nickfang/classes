@@ -32,3 +32,37 @@ Choose colors wisely (that get's the desired response from audience)
 	Purple is traditionally associated with power, nobility and wealth. In your design, purple can give a sense of wisdom, royalty, nobility, luxury, and mystery.
 	Pink expresses romance, passivity, care, peace, affection, etc.
 	Brown is the color of relaxation and confidence. Brown means earthiness, nature, durability, comfort, and reliability.
+
+
+Text
+
+Overlay a color to make text more readable
+Use a text box to show text better.
+Blur the images
+Floor Fade - images fades to black towards the bottom.  Increases text redability at the bottom.
+
+
+
+Working with Icons
+
+use icons to show features of a website
+use icons for actions or links
+	Icons should be recognizable
+	label your icons
+	should not take center stage in design
+	use icon fonts whenever possible (vector images)
+
+
+White Space
+	key to create clean and simple look and feel.
+	put whitespace between elements, groups of elemetns and website sections
+	Whitespace describes invisible relationships between elements of website.
+	Define where you want audience to look first
+	estabilsh a flow that corresponds to your content's message
+	use whitespace to build that flow.
+
+User Experience
+	Uesr's Goals and Business Goals need to align.
+
+Inspiration
+
