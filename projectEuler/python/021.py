@@ -24,7 +24,7 @@ def getDivisors(n):
 		for x in reversed(divisors):
 			if (x != int(n / x)):
 				divisors.append(int(n / x))
-		# remove n
+		# remove
 		divisors.pop()
 		return divisors
 	else:
@@ -47,7 +47,6 @@ for i in numsToCheck:
 		if (i == sumList(getDivisors(pair)) and (i != pair)):
 			isAmicable[pair] = False
 			sum += i + pair
-
 
 print(sum)
 
