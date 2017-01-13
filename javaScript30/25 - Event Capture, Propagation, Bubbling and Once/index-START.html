@@ -36,9 +36,33 @@
     background:coral;
   }
 </style>
-
 <button></button>
 <script>
+
+  const divs = document.querySelectorAll('div');
+  const button = document.querySelector('button');
+
+  function logText(e) {
+    console.log(this.classList.value);
+    // stop the bubble up from the event listener.
+    // e.stopPropagation();
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    // run the function on the way down instead of the way up.
+    // capture: true
+    // run the functions while bubbling up
+    // capture: false
+    // listen for a clik and then unbind itself.  will never listen for a click again.
+    once: true
+  }));
+
+  // can be used for a checkout button where you only want them to click it once.  until they reload the page again.
+  button.addEventListener('click', () => {
+    console.log('Click!!!');
+  }, {
+    once: true
+  });
 
 </script>
 </body>
