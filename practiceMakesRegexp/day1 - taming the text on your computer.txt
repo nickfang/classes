@@ -1,0 +1,51 @@
+Thanks for checking out my crash course on regular expressions, also known as regexps.
+
+I'm Reuven Lerner, a software developer, trainer, and author of Practice Makes Regexp, a book that allows programmers to establish fluency with regexps.
+
+My goal for this smaller, free course is to provide you with a quick introduction to regular expressions, so that you can start to use them in your day-to-day work. Regexps have a reputation for being impossible to understand, even among experienced programmers; my goal is to show you that this doesn't have to be the case.
+
+Here's the problem: Modern computers generate lots of text. Oodles and oodles and oodles of text. Between user-generated content and logfiles, not to mention automated communication among our computers, we're creating mountains of text.
+
+Most programming languages make it easy to search for one text string inside of another. But what if we're looking for not a precise target string, but rather a pattern?
+
+For example:
+I want to find valid US Social Security Numbers, normally formatted with three digits, two digits, and four final digits (xxx-yy-zzzz).
+I want to find all of the URLs in a document that specify the port explicitly, rather than using the default (i.e., port 80).
+I want to retrieve the timestamp for each 503 error in my HTTP server's logfile.
+I want to find all of the files on my desktop whose names start with "a" and that have a "doc" or "xls" extension, but not a "docx" or "xlsx" extension.
+All of the above are tasks that are trivially easy for humans to perform, given enough time. But when we need to search through gigabytes of data, time is precisely the problem.  Instead, we'll need to instruct our computer to look for such patterns.
+
+And that's the issue: While it's easy to describe patterns using English (or another human language), it's surprisingly difficult to do so with a programming language.  Even if you do get it work, it'll likely be after a lot of trial and error, and will end up being slow to execute and difficult to maintain—a terrible combination.
+
+What we want, then, is a way to describe the patterns for which we're looking in the text, in a way that is compact and precise. And that's the job of regular expressions.
+
+Regexps allow us to search for patterns within text.  Once we have found that pattern, we can do any number of things with it:
+Print it out;
+Use it as the basis for a search-and-replace operation;
+Or, dig deeper into the match, extraction portions of it.
+For example, if I extract the timestamp and response code from all lines in my HTTP server's log, then I can look within it to retrieve the month, or the hour. That will allow me to produce histograms showing during which hours of each day I experienced the greatest number of errors.
+
+Regexps have been around for many years, but as the quantity of text produced becomes ever larger, the need for finding ways to search for patterns has become ever more urgent.
+
+And yet, a large number of experienced developers are unfamiliar with regexps. That's partly because the syntax can be complex for people to learn and understand. It doesn't help any that there are many different dialects of regexps, each slightly different than the other, with different capabilities. Knowing when to use each syntax can trip up even the most experienced regexp wizard.
+
+I know just how weird and hard they are, because I was turned off the first time I tried to learn regexps: I was in my first year of college, and was reading through the manual for GNU Emacs, when I saw that it supported this thing called regular expressions.
+
+I had no idea what those were, and tried to read the manual introducing them. This was a colossal failure; not only did I fail to understand regexps, but I failed to see why anyone would try to learn such nonsense.
+
+It took several more years, and dozens of tutorials for me to finally understand them. More than 20 years later, regexps are a natural part of my everyday work, no matter what programming language I'm using.
+
+Moreover, I now teach classes in regexps to Fortune 100 companies, helping those developers (and their employers) to solve problems more quickly and efficiently.
+
+In this e-mail course, I'm going to show you how to build and use regexps.
+
+The same syntax, more or less, works across many different languages and platforms. Thus, with small (or no) alterations, the same regexp will work in Python, Ruby, JavaScript, the Unix grep tool, and in relational databases such as PostgreSQL, as well as in nearly any other language you can imagine. I'll point out some of the differences between the regexp dialects for you, to get a sense of the differences.
+
+Tomorrow, we'll delve into how programming languages and regexps can get along—how we can pass a regexp to a language, and then how the language can indicate to us that it has found one or more matches in the text. Following that, we'll start to execute our own searches using regexps, using progressively more complex logic and metacharacters.
+
+I'm delighted that you're joining me for this e-mail course! If you have any questions, just hit the reply button and drop me a line. I will respond personally to every email.
+
+Until tomorrow,
+
+Reuven
+http://practicemakesregexp.com

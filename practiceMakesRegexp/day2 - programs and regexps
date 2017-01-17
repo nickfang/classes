@@ -1,0 +1,139 @@
+Yesterday, I introduced the "why" behind regular expressions.
+
+Simply put, regexps allow you to describe a pattern of text—something that's natural for humans—in a way that your computer can understand.
+
+By using regexps, you reduce development time, reduce the complexity of your code, and increase both the maintainability and efficiency of your code. Not a bad combination, right?
+
+However, this ignores one important fact: Regexps aren't a programming language. Rather, regexps are a pattern-matching language, used from within a programming language.
+
+Well, that's not entirely true: The "grep" problem that has been standard on Unix systems for about 40 years is a program to which you hand your regexp. It then searches through the lines of the files you have given to it. So if you were to say:
+grep foo words.txt
+...then you would get a list of all lines in words.txt matching the regular expression "foo".  (And by "matching," I mean, "containing anywhere within it.")
+
+(If you're saying, "Wait a second... `foo` is a word, not a regular expression," then you're already jumping the gun a bit! Plain ol' words are regular expressions, albeit boring and limited ones. I'll soon show you metacharacters, which provide the flexibility that pattern-matching demands.)
+
+But grep, while a wonderful program that I use quite often, doesn't account for all of the places in which we want to use regexps.
+
+Rather, we often want to use regexps within a program.
+
+For example, if I'm writing a privacy-auditing program that looks for Social Security numbers, I want to do that within a larger program, of which I've already written in a programming language.
+
+This is where things get a bit strange: You cannot use regexps from directly within your programming language.
+
+Rather, you can think of the regexp engine as a separate piece of functionality that can be used and activated as necessary. You'll normally call upon the regexp engine to:
+Create a regexp object
+Use a regexp object to find one or more matches within a string
+Get one or more results back from the "find" functionality
+This means that if I'm programming in Python, I can't just search for a regexp within a string.
+
+Instead, I need to create a regexp object in Python, pass that regexp object to the regexp engine, and then get the results back in the form of a Python object (Python programmers might object that it's possible to do this without first creating a regexp object—but I'd argue that this always happens, even if you're not aware of it).
+
+All three of these actions differ from language to language. Some programming languages allow us to create regexp objects directly, whereas others require that we do so by passing a string to a special function (some let us choose which way we want to go).
+
+What methods or functions we invoke to find results depend on the language we're using. And then when the regexp engine returns one or more results, we need to know what we'll get—which might be a collection of results, a single match object, or something else entirely.
+
+Understanding the interface between your language and the regexp engine is an important part of working with regexps, and is an important aspect of learning a new programming language that you'll be using for serious text processing.
+
+There are similarities, but remembering the differences can be maddening, because they're not part of knowing regexps per se, but rather reflect the specific regexp API that a particular language has implemented.
+
+Let's explore these topics in somewhat greater depth, using existing programming languages for some examples:
+
+
+Creating regexps
+
+Every language has its own way of turning text—often from a string object—into a regexp. Just how you do it depends on the language. Languages, such as Perl, Ruby, and JavaScript, have a special syntax for regexps, in which slash characters define the regexp. For example, in Ruby we can say:
+r = /foo/
+
+Once the above line of code has executed, the "r" variable contains an object of type Regexp (you can invoke r.class, and see for yourself).
+
+If you want to search for something containing slashes, you'll need to preface the literal slash with a backslash. For example, here's some JavaScript code that searches for the term "and/or":
+var r = /and\/or/;
+
+Ruby and JavaScript do offer an alternative, using a regular object constructor. For example:
+r = Regexp.new('foo')   # Ruby code
+var r = RegExp.new('foo')  // JavaScript code
+
+Python offers us just one option, namely creating regexps from a string using the "re" package, which comes with Python. By invoking the "re.compile" function, we can accomplish the same thing as in the Ruby code above:
+import re
+r = re.compile('foo')
+
+A major disadvantage of using strings to define regexps is that you'll often encounter two layers of parsing—one for the string, and one for the regexp.
+
+For example, Python's regexp engine recognizes "\b" as a word boundary. So in theory, I could search for "foo" as a word by itself, not connected to other words, with the regexp "\bfoo\b".  However, doing so in Python will have unexpected consequences:
+import re
+r = re.compile('\bfoo\b')  # Does not work!
+
+The reason why this doesn't work is Python first has to create a string object. That string object is then passed to re.compile to create a regexp object. The problem is that "\b" is interpreted in a Python string as ASCII 8, the backspace character. And thus, by the time our intended pattern reaches re.compile, the "\b" no longer exists.
+
+For this reason, we need to preface the "\b" with another backslash:
+r = re.compile('\bfoo\b')  # Works
+
+Alternatively, we can use Python's "raw strings" to ensure that what we write is passed along to the regexp engine:
+r = re.compile(r'\bfoo\b')  # Works, thanks to raw strings
+
+When writing Practice Makes Regexp, I had this problem repeatedly in both Python and JavaScript. (I had it less in Ruby, for reasons I can't explain.)  So even if you're used to writing regexps, remembering which language interprets which strings in which ways can be frustrating.
+
+
+Searching for our regexp in a string
+
+Now that we have a regexp object, how can we search with it? There is no standard answer to this, because every language has its own style and quirks. I'll give a brief overview, and then a few examples—and then a few links to learn how such things work in a variety of languages.
+
+The basic idea is that you ask the regexp engine to apply the regexp to a string, and then get back one or more results. In most languages, there's a way to ask for all of the results to be returned to you as a collection of strings. For example, in Python, I can say
+re.findall('foo', mystring)
+
+This will return a list—perhaps an empty list, but a list nonetheless—containing all of the text that was matched (in this case of this trivial regexp, it'll pass zero or more "foo" strings, admittedly not very exciting).
+
+(Note: I often use re.findall when I'm working with Python, so that I can get a basic understanding of whether my regexp is a good one.)
+
+I can do something similar in Ruby:
+'I like foo bar and baz, but most of all foo'.scan(/foo/)
+
+In the above code, I'm using the String#scan method, which takes a regexp as a parameter. The value returned is a Ruby array, in which each element is one place that my regexp matched my string. Notice that I passed a literal regexp object (using slash syntax) to the String#scan method. Also notice that my string hasn't been assigned to a variable, but was rather defined inline.
+
+But there are other times when I want to get only one result, and want to examine that result carefully.  In such cases, Python returns not the matching substring, but rather a "match object" from which I can extract information about my search. For example:
+>>> import re
+>>> s = 'I like foo bar and baz'
+>>> r = re.compile('foo')
+>>> m = r.search(s)
+>>> m.group(0)
+'foo'
+
+In this case, we define a string (s) and a regexp object (r). We then invoke "re.search", which returns a match object if there was a match, and None if there wasn't any. The important thing here is that the match object isn't a string, and thus isn't the precise match: Rather, it's an object from which we can retrieve group 0, which is our match.
+
+Why would we do such a thing? First of all, if and when we want to define groups—subsections of our regexp—a match object lets us retrieve them individually. Thus, if you want to grab the timestamp from each line of a logfile, but then retrieve individual elements of that timestamp, a match object makes that easy.
+
+A match object can also tell you where the match was found in the string, return the matches as a dictionary, and a number of other nifty tricks.  Other languages have similar functionality. For example, in Ruby, I can say:
+m = 'I like foo bar and baz'.match(/foo/)
+m.to_s
+
+In this case, "m" is a MatchData object, and invoking MatchData#to_s returns the matched string . We can, similarly to Python, get the text preceding and following that matched data.
+
+
+Variety, galore
+
+I should note that there's a tremendous degree of variety here: Some languages offer a large number of methods for searching. Others offer a limited number.
+
+In some, you invoke methods on the regexp object, and pass a string as a parameter. In others, it's the opposite—and in yet others, you can use either one.
+
+Some languages offer a special operator, such as =~, for regexp matching, while others use methods. The underlying ideas are the same across these languages, so once you recognize what you need to look for, you should be able to find it relatively easily.
+
+Your favorite language undoubtedly has ways to search for one or more matches, and also to retrieve those matches.
+
+Here are some links to regular-expressions.info, a great site that describes regexp operators and syntaxes across a number of languages.
+
+Note that many of the topics addressed on these pages are fairly advanced; don't let them lull you into thinking that you can't figure this out!  We're just at the start of our regexp journey, with much more to do:
+.NET: http://www.regular-expressions.info/dotnet.html
+Java: http://www.regular-expressions.info/java.html
+JavaScript: http://www.regular-expressions.info/javascript.html
+MySQL: http://www.regular-expressions.info/mysql.html
+Perl: http://www.regular-expressions.info/perl.html
+PostgreSQL: http://www.regular-expressions.info/postgresql.html
+Python: http://www.regular-expressions.info/python.html
+Ruby: http://www.regular-expressions.info/ruby.htm
+Tcl: http://www.regular-expressions.info/tcl.html
+Now that you have a basic understanding of how we're going to define our regexp, get it into a programming language, and get some results out, we can start to build actual regexps, and search for text with them.
+
+I'll be back tomorrow with our first discussion of metacharacters and matching patterns, rather than literal words.  See you then!
+
+Reuven
+http://practicemakesregexp.com
