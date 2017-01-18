@@ -1,0 +1,128 @@
+Today, in day three of our e-mail course, we'll start to talk about metacharacters.
+
+(For those of you who follow the DC comics universe, metacharacters are to characters what metahumans are to humans—more powerful, with special abilities. And the potential to wreak havoc on things if not carefully controlled.)
+
+
+The Basic Idea
+
+If we want to search for patterns, then we're going to need to be able to describe the text we're looking for using categories and generalities. Metacharacters allow us to describe our the text for which we're searching in a general way. They are the basic building blocks of regexps.
+
+Using them, we'll be able to create more complex regexps that describe more interesting and useful patterns.
+
+In previous messages, I indicated that most characters match themselves. Let's make that more specific: If your regexp contains only letters, numbers, and whitespace (e.g., space, tab, and newline characters), then it'll match itself. The thing is, that's not much of a pattern. For example, the regexp:
+cab
+...matches the three-letter sequence "cab".
+
+If we search for "cab" inside of a string, then we'll either find a match (for the precise three-letter sequence "cab") or not. But what if I want to find three-letter sequences in which "c" is the first letter, "b" is the final letter, and any other character can be the second? Such a pattern would match the words "cab", "cob", and "cub", as well as the non-word "czb".
+
+To write such a regular expression, we'll use the metacharacter "." (sometimes called "dot").  Each dot matches a single character—letter, number, punctuation, symbol, or whitespace.  Indeed, the only character that . does not match is newline. So, in the string:
+cab cub cube
+...the regexp "c.b" will find three matches: "cab", "cub", and a second "cub". The final "e" in "cube" doesn't match; we never indicated that we're looking for whole words, and thus "cube" (or the first 75% of it) matches.
+
+Let's say I want to find all of the words in which the letter "p" appears twice, but with two other letters between them. We could use the regexp "p..p" which matches one "p" character, two other characters of any sort, and then a final "p".
+
+One easy way to test this sort of regexp is to use the Unix "grep" command, as follows:
+grep 'p..p' words.txt
+There are actually 1699 matches to that pattern.
+
+
+Dot Usage
+
+Q: When  should we use "." in a regexp?  A: Whenever we need to indicate that we want to match a single character.
+
+Again, the definition of "." means that it doesn't match newline, so you don't need to worry about crossing lines with ".".  Thus, if I were to have the string:
+abc a\nc azc
+...and I tried to match "a.c", it would only find two matches, not three.
+
+If I want to have a literal . character in a regexp, I must precede it with a backslash.  So:
+U.S.A.    # matches UzSzAz and U!S?A~
+U\.S\.A\.  # only matches U.S.A.
+a...b...c  # matches strings of text starting with "a", any three non-newlines, "b", any three non-newlines, and "c"
+
+More metacharacters
+
+Other commonly used metacharacters (or actually, a set of metacharacters) describe the characters that come before them.  For example, the "?" metacharacter makes the single character that precedes it optional.  So the regexp "ab?c" will match "abc" and "ac", but not "adc"—because we're saying that if the middle character is there, then it must be a "b".
+
+When would I use "?" in a regexp?  There are all sorts of places in which characters can be optional. For example, we could match both American and British spellings of the word "color" ("colour") with a regexp:
+colou?r
+Try to match this with grep:
+grep 'colou?r' words
+...and you'll get zero results.
+
+Why?
+
+Because in grep and other regexp engines like it, "?" must have a backslash to be special (i.e., a metacharacter).
+
+By contrast, in Python, Ruby, and JavaScript, "?" with a backslash is a regular "?" character. Yes, this is maddening, but there's no way around it. So you just need to remember which engine you're using. The above "grep" command should thus be"
+grep 'colou\?r' words
+...and I get 125 matches.
+
+
+Mixing Metacharacters Together for More Mayhem
+
+When we combine . and ? together, we're saying that any character (other than newline, of course) may appear zero or more times.  A few more examples:
+can'?t   # matches "cant" and "can't"
+ice ?cream  # matches "icecream" and "ice cream"
+U\.?S\.?A\.?  # matches USA and U.S.A.
+It's important to realize that the ? metacharacter, like all others in regexps, is greedy.  That means that if the regexp engine has to choose between a minimal match (without the optional character) and a maximal match (with the optional character), it'll go for the maximal match.
+
+So:
+If we search for "abc?" in the string "abcd", the match will be on "abc"
+If we search for "hmm?" in the string "hmmmmmm", the match will be on "hmm" — two "m" characters
+If we search for "ab." in the string "abc ab ab" then the matches will be on "abc",  "ab " (including the space character), but not "ab" (without the space character).
+I'd argue that a large number of regexp bugs result from people forgetting that regexps are greedy. It's easy to forget that, and to end up matching more than you expected.
+
+Now, there are times when we need to match something that repeats.
+
+For example, I might want to say that there's an "a" character followed by a space character.  Or two.  Or 10.  Or 50. Actually, I don't know how many spaces follow the "a", but I know that it's at least one. I want to match not only the "a", and the spaces, but also the character following all of those spaces.
+
+In such a case, I use the + metacharacter.  +, like ?, modifies the character that comes before it, indicating that the character must appear at least once, and then appears more times.  Such a regexp would look like this:
+a +.
+In other words: We'll look for an "a", followed by one or more spaces, followed by another character.  So:
+In 'xyza bcde', the regexp would match "a b"
+In 'xyza   bcde', the regexp would match 'a   b'
+In 'xyza                     bcde', the regexp would match 'a                     b'
+When using "grep", you need to preface the + with a backslash.  So, let's say I want to find all words in the dictionary that contain an "r" followed by at least one letter and then "q" afterwards.    I could find them as follows:
+grep 'r.q' words  | cat -n | tail
+On my computer, I found 477 matches, the first of which is "aceanthrenequinone" and the final of which is the scary-sounding "worldquake".
+
+
+Seeing Stars
+
+A close cousin to + is *, which finds zero or more matches for a character. For example, let's say that I'm looking for "AA" and "BB" inside of some text.  There might be some spaces between those strings, but there might be none.  How can I find them, from the first "A" to the final "B"?  By putting * right after a string:
+AA * BB
+Whereas + requires that the space character be there, * does not. It'll always match, because it's OK for * to match zero characters—in this case, space characters.
+
+Here are some examples of using * in patterns:
+'abc\n*def' means that between "abc" and "def", there might not be any newlines, but if there are any, there could be  could be any number.
+"a*b" means that between "a" and "b" there might be no characters at all, or there might be lots of characters — including one or more other "b" characters (since regexps are greedy)
+Now, you would think that because + and * are so similar, that you would need to precede * with a backslash in order for the regexp engine to treat it as a metacharacter. But that's not the case!  "*" doesn't need to be preceded by a backslash at all in order to work as a metacharacter.
+
+For example, let's use grep to find all words that contain "q" and then "u" after them, either immediately or not:
+grep 'q.*u' words  | cat -n | tail
+This actually produces a surprising number of results; on my computer, there are 3,553 matches. Many of them have "qu" next to each other, but some have "q" followed by one or more other letters, followed by "u".
+
+
+Mins and Maxes
+
+Finally, if you want to indicate that a character must appear at least X times and at most Y times, you can use the {min,max} syntax.
+
+For example:
+Hello!{3,5}
+...Means that we want the word "Hello" followed by between 3 and 5 "!" characters (of course, additional ones might appear following our match, but we won't notice or capture them).
+
+It's common to use {min,max} when you know that something will appear within a certain range, but can't be sure just where.  {min,max} does work in grep on the command line, but requires that the braces be preceded by backslashes.
+
+
+Conclusion
+
+All of these metacharacters (. ? + *  {} ) are used in regexps every day. As I mentioned above, they're the building blocks of regexps, and allow us to describe larger and more interesting patterns.
+
+The next topic I want to address is character classes.  But I first want to give you some exercises, to see if you've learned the basic concepts I've presented here:
+How many words in the dictionary contain "a" (not necessarily the first letter) followed by 3-5 characters, then "b" followed by 3-5 characters, then "c"?
+What is the last word in the dictionary that contains "ee" and also "oo", in that order, but not necessarily adjacent?
+How many words in the dictionary contain either "aeu" or "au", then followed by "s"?
+I'll be back tomorrow with answers, and then we'll move onto character classes!
+
+Reuven
+http://practicemakesregexp.com
