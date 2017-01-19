@@ -1,0 +1,32 @@
+Hi, and good morning!
+
+Today, we'll review the exercises that I gave you last time, which were meant to ensure that you understood how to work with the most basic metacharacters:
+How many words in the dictionary contain "a" (not necessarily the first letter) followed by 3-5 characters, then "b" followed by 3-5 characters, then "c"?
+What is the last word in the dictionary that contains "ee" and also "oo", in that order, but not necessarily adjacent?
+How many words in the dictionary contain either "aeu" or "au", then followed by "s"?
+1. The first exercise asks us to find words in the dictionary that contain "a", followed by 3-5 characters. This means that we'll need a literal "a", followed by .{3,5}, which means "any character other than newline," and then "whatever came before, 3-5 times".
+
+Remember that .{3,5} doesn't mean "the same character 3-5 times," but rather that we should apply the "." regexp metacharacter 3-5 times. Then we're supposed to find a literal "b", and then another 3-5 characters, which means "b.{3,5}". The full regexp so far will then be "a.{4,5}b.{3,5}". Finally, we want "c" to come after these, providing us with the final regexp:
+a.{3,5}b.{3,5}c
+I'm not going to go into depth in this e-mail course of how to apply this regexp in different programming languages. Instead, I'll just show you how to do it with the Unix "grep" command:
+
+grep 'a.\{3,5\}b.\{3,5\}c' words
+
+Notice the backslashes, which are required in the case of grep. In most programming languages, the opposite is true: Backslashes aren't necessary if you want {min,max} and are necessary if you want literal backslashes.
+
+2. The second exercise asks us to find words with "ee" and also "oo" in that order. In other words, we're looking for a literal "ee" and a literal "oo", and zero or more characters can come between them. This means that the regexp will need to look like this:
+ee.*oo
+The use of .* means, "zero or more characters" between "ee" and "oo".  Again, we're saying that we're willing to have zero or more characters, each of which can be anything but newline, between "ee" and "oo".
+
+3. Finally, we want to find words containing either "aeu" or "au", then followed by "s". The key thing to notice here is that "aeu" and "au" are the same, except that the first has an "e" in the middle. Thus, we can represent this regexp as:
+ae?us
+This means that we want to find "aeus" or "aus".  The use of "?" to make a character optional is effectively the same as saying "{0,1}" but is more common.
+
+Did you manage to get these right?  Better yet, did you come up with another regexp that does the job?
+
+Either way, I'd love to hear from you; just respond to this e-message, and tell me what you came up with. Or just tell me if this course is helping you to understand regexps!
+
+I look forward to hearing from you, and we'll be back tomorrow to show you all about character classes,
+
+Reuven
+http://practicemakesregexp.com
