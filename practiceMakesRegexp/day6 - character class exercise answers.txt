@@ -1,0 +1,23 @@
+Hi again!  It's time to review the regexp exercises that I provided to you last time,  and to check how you're doing with this crash course.
+
+The first exercise was as follows:
+Find all words in the dictionary that contain two consonants (i.e., non-vowels), two vowels, and then either "p" or "r". These letters should be consecutive, and can be at the beginning, middle, or end of a word.
+This requires that we build three character classes, and then apply the {min,max} structure to two of them.  We'll start with two non-vowels, which means that we take the character class [aeiou] and then negate it, getting [^aeiou], and then indicate that we want two letters from that set, meaning [^aeiou]{2}.  Following that, we want two letters from the opposite (positive) set, i.e., [aeiou]{2}.  Following that, we want either "p" or "r", which we can get by using a separate, two-element character set.  The final answer is thus:
+[^aeiou]{2}[aeiou]{2}[pr]
+
+The next exercise is:
+Find all words that contain "e", "f", "g", and/or "h" three times in a row, then any letter, and then "m", "n", and/or "o" twice in a row.
+Once again, we're looking for a simple character set three times, [efgh]{3}.  Then we look for any letter -- which we should probably make [a-z], but I'd argue that it would be just as good to say \w, since no digits, underscores, or capital letters will ever be in the middle of a word.  Finally, we look for [mno]{2}.  Put that all together, and our regexp looks like:
+[efgh]{3}\w[mno]{2}
+Find words that contain a "q" followed by something other than "u".
+Here, we're looking for words that contain a "q" (which, of course, is just a literal "q") and then anything other than "u" -- which means a one-letter character class ([u]) negated ([^u]).  In other words:
+q[^u]
+How many of these did you get?  I'd love to hear what you think; as always, you can reply to this message, and let me know whether you're overcoming your fears of regular expressions -- and starting to realize how they can help to make you a more efficient developer.
+
+Notice that these exercises mostly ignored the built-in character classes.  That's because I'm trying to keep these exercises simple and useful within the context of "grep", rather than starting to use lots of different programming languages.  But believe me, there are plenty of times when we used the built-in character classes, so it's always a good idea to think, "Would a build-in class -- \d, \w, or \s -- be appropriate here?"  Even if it's slightly overkill for your purposes, these built-in classes can be really helpful.
+
+Next time, we'll start to talk about anchors, which let us describe not just part of a word (or line), but the entirety of it.
+
+Until then,
+
+Reuven

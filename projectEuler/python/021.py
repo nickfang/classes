@@ -8,27 +8,9 @@
 #
 
 import time
-import math
+import utilsNum
 
 startTime = time.time()
-
-#get the divisors of a number not including the number itself.
-def getDivisors(n):
-	if (n != 1):
-		divisors = []
-		# get all integers between 1 and sqrt(n) + 1.  Go through these to get possible factors.
-		for x in range(1,math.floor(n ** 0.5)+1):
-			if ((n % x) == 0):
-				divisors.append(x)
-		# get the rest of the factors by dividing the
-		for x in reversed(divisors):
-			if (x != int(n / x)):
-				divisors.append(int(n / x))
-		# remove
-		divisors.pop()
-		return divisors
-	else:
-		return [1]
 
 def sumList(list):
 	sum = 0
@@ -42,9 +24,9 @@ numsToCheck = [i for i in range(1,nums+1)]
 isAmicable = [True for i in range(nums+2)]
 for i in numsToCheck:
 	if (isAmicable[i] == True):
-		pair = sumList(getDivisors(i))
+		pair = sumList(utilsNum.getDivisors(i))
 		isAmicable[i] = False
-		if (i == sumList(getDivisors(pair)) and (i != pair)):
+		if (i == sumList(utilsNum.getDivisors(pair)) and (i != pair)):
 			isAmicable[pair] = False
 			sum += i + pair
 

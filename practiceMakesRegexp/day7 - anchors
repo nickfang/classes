@@ -1,0 +1,44 @@
+Hi again!  Today, we'll talk about anchors in regular expressions. Anchors allow us to say not just that a line should contain a certain pattern, but that it should start or end with a certain pattern.
+
+That is: If I just look for the regexp "\w+\s+\w+", then I'll get matches for any line in a file that contains one or more word characters, followed by one or more whitespace characters, followed by one or more word characters.  It's important to remember that this might match the whole line — but it also might only match part of the line, and in some cases, that's not going to be good enough.
+
+To ensure that something matches the start of a string, use the ^ character.  Note that ^ isn't like the "." character, in that it doesn't consume a character at all.  So the regexp "^abc" means that the letter "a" must be at the start of the string.  Also note that in any other place in your regexp, ^ is a regular old character, one that matches itself.
+
+So to find words that start with "def", you would use the regexp
+^def
+
+And to find words that start with "d", any vowel, and "f", then you'd use the regexp
+^d[aeiou]f
+
+And of course, to find all of the Social Security Numbers that appear at the front of the string, with optional whitespace preceding them, we would say:
+^\s*\d{3}-\d{2}-\d{4}
+
+Anchoring is also possible at the end of the string, using the $ character. As with ^, $ is only special in this way at the end of the regexp, and doesn't consume a character.  So we can find all words ending with "exes":
+exes$
+
+Or all words that end with a vowel:
+[aeiou]$
+
+By combining ^ and $, we can define the pattern for an entire word, not just for a part of a word.  Indeed, this is one of the most common uses for regexps.  For example, I want all words that begin with a vowel and end with a non-vowel:
+^[aeiou]\w*[^aeiou]$
+
+Notice how I used \w* in the middle.  That allows for two-letter words (i.e., without any letters between the starting and ending character).  I can also say that I want all words in which "b" is the second letter and "z" is the second-to-last letter:
+^\wb\w*z\w$
+
+What about if I want only those words in which "b" is the second letter, "z" is the second-to-last letter, and there are at least eight letters in the word?  The above regexp matched words with at least four characters, so a small change should do the trick:
+^\wb\w{4,}z\w$
+
+Now the \w in the middle must appear at least four times, rather than at least zero times, thus giving us a minimum of eight characters (two at the beginning, two at the end, and four in the middle).
+
+If you want a literal ^ at the start of your regexp, or a literal $ at the end of your regexp, you'll need to use a backslash to escape it, and to turn it into a regular character.  For example, the following will match numbers that end with a dollar sign:
+\d+\$
+
+Does this makes sense to you?  Let's find out, with some anchored regexp exercises, to test yourself.  I'll supply the answers to these questions in the next message:
+Find all words in the dictionary that start with a capital vowel and contain at least 8 letters
+Find all words in the dictionary whose first letter isn't capitalized, whose second letter is a vowel, and whose third-to-last letter is either "x", "y", or "z"
+Find all words in the dictionary that contain three vowels in a row, but in which that three-vowel sequence is at least 5 characters after the front of the word and also 5 characters before the end of the word.
+I'll be back tomorrow with the answers — and then we'll look into grouping, one of the most important (and hardest to understand) concepts in regexps.
+
+Until next time,
+
+Reuven

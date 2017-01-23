@@ -1,0 +1,74 @@
+Hi again!  Now that you hopefully have a basic understanding of working with the basic regexp metacharacters, we can start to make things a bit more interesting.  Let's say that I'm interested in finding all of those words in the dictionary that contain the letter "n" followed by any character.  That's easy; I can just say
+n.
+
+But what if I'm looking not for words that contain an "n" and any character, but rather words containing "n" followed by either "g" or "k"?  In such a case, we want to use a "character class" — a set of characters from which the regexp engine may choose one.  That looks as follows:
+n[gk]
+
+Notice a few things about this:
+The character class begins and ends with square brackets.  If you want literal square brackets in your regexp, you need to preface them with backslashes.
+The character class indicates that one of the characters from within the character class will be chosen.  Not more than one.  We'll see below how to choose more than one, in a variety of ways.
+The character class indicates here that one of these characters must appear; it's not optional.
+Sure enough, if I run
+grep 'n[gk]' words.txt
+
+on my computer, I get a large number of matches.
+
+A character class may contain any characters you want; it's as if you're getting to define your own, special version of the "." metacharacter (or something like it).  So you can say that you want all of the vowels:
+[aeiou]
+
+Or all of the characters in hexadecimal digits:
+[abcdef0123456789]
+
+(We'll see in a moment how to shorten this above example.)
+
+What if I want to find words at the end of a sentence, including the punctuation mark?  I can say:
+     .+[.?!]
+
+There are two important things to notice about the above regexp:
+The regexp starts with a space character, although that might not be visible or obvious from looking at the above, and
+Inside of square brackets, all standard metacharacters lose their special meaning, and become ordinary characters.
+So inside of a character class, you can assume that all characters are normal.  Well, not all of them; some characters take on new meanings:
+
+For example, what if I want to find words in which "n" is followed by anything not "g" or "k"?  Then I can negate the character class by putting a caret character at the start:
+n[^gk]
+
+The above means, "Find 'n', and then the character following 'n' must not be either 'g' or 'k'."    What if I want to find all of the characters that are not used in hexadecimal numbers?  I can say:
+[^abcdef0123456789]
+
+But the above is a bit long and convoluted. Wouldn't it be great if I could tell the regexp engine that my character set should contain everything from a-f, and from 0-9?  Indeed, we can create such a range, with a minus sign (-):
+[^a-f0-9]
+
+The above means, "I want one character that is neither in the range a-f nor in the range 0-9.  You can create a range with any set of letters or numbers, but you can't mix them up.  And of course, capital and lowercase letters are considered different from one another.
+
+A few questions that arise from this:
+What if you want to include the ^ character in your class?  Just put it somewhere other than the first character.
+What if you want to include - in your character class?  Put it on the edge, either at the start or end of the character class.
+Character classes are powerful, in that they allow us to customize the sorts of characters we're looking to find.  Want to find all of the words that start with a vowel and end with a vowel, with the letter "x" somewhere in the word?  How about this:
+[aeiou].*x.*[aeiou]
+Want to find US-style telephone numbers, in which you have XXX-XXX-XXXX but where the "-" might be replaced by a "." character, just use:
+[0-9]{3}[.-][0-9]{3}[.-][0-9]{4}
+Notice in the above example that we're now adding the previously discussed metacharacters.  When you see [abc]+ in a regexp, that means we want to have one or more characters from that set in a row.  Thus, that character class will match "aaa" and "abc" and "cbbbaa", but it won't match "adb".
+
+Some character classes are so commonly defined that Python gives us shortcuts to create them:
+\w is the same as [a-zA-Z0-9_] (i.e., word character)
+\W is the same as [^a-zA-Z0-9_]  (i.e., non-word character)
+\d is the same as [0-9] (i.e., numeric digit)
+\D is the same as [^0-9] (i.e., non-numeric digit)
+\s is the same as [ \t\r\n] (i.e., whitespace)
+\S is the same as [^ \t\r\n] (i.e., non-whitespace)
+So if you want to find whitespace, a word containing only the letters "abcd" (in any order) and then a period, you could say:
+\s+[abcd]+\.
+Some other examples of regexps using character classes:
+
+US-style Social Security Numbers can be represented as "\d{3}-\d{2}-\d{4}" (i.e., three digits, two digits, and four digits, with a minus sign between each group)
+Hexadecimal numbers can be represented as "0[xX][a-fA-F0-9]" (i.e, zero, the letter x, and then hex letters + numbers)
+Two words in a row, in which the first starts with "s" and the second ends with "t", can be represented as "\s+s[a-z]+\s+[a-z]+t\s+" (i.e., whitespace before and after each word, the letter "s" followed by one or more letters, whitespace between the words, and then a-z before the final "t")
+Here are some exercises to think about character classes; I'll be back tomorrow with the answers:
+Find all words in the dictionary that contain two consonants (i.e., non-vowels), two vowels, and then either "p" or "r". These letters should be consecutive, and can be at the beginning, middle, or end of a word.
+Find all words that contain "e", "f", "g", and/or "h" three times in a row, then any letter, and then "m", "n", and/or "o" twice in a row.
+Find words that contain a "q" followed by something other than "u".
+I'll be back tomorrow with the answers to these exercises.  See you then!
+
+Reuven
+
+PS: Do you feel like this course is helping you to learn more about regexps?  If so, then please let me know, just by replying to this message!  And if not, please tell me what's still confusing to you, so that I can improve the course for future readers.  Thanks!
