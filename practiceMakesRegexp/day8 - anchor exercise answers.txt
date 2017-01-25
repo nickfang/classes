@@ -1,0 +1,37 @@
+Hi again!  I'm back, with answers to the anchor-related exercises from last time.  Anchoring is actually a pretty simple idea; the issue that I normally see is that people forget to use anchors more often than they don't know how to use them.
+
+Let's review each of the questions in turn:
+Find all words in the dictionary that start with a capital vowel and contain at least 8 letters
+In this case, we'll want to indicate that a word starts with a capital vowel.  In other words:
+^[AEIOU]
+
+Then we want at least seven additional letters.  The easiest way to do this is to say
+^[AEIOU]\w{7,}
+
+which indicates that following the initial letter, we want to have at least seven characters. Note that I used \w here; while it can match numbers and underscores as well as letters, I often use \w whenever I want a letter if I know that the chances of a mismatch are small.  Otherwise, we could use the more precise regexp:
+^[AEIOU][a-z]{7,}
+
+which makes it explicit that we want at least seven lowercase letters following that initial capital.
+
+The next exercise is as follows:
+Find all words in the dictionary whose first letter isn't capitalized, whose second letter is a vowel, and whose third-to-last letter is either "x", "y", or "z"
+Now we're going to have a slightly more complex regexp, albeit one that is similar to the first.  The specifications of this regexp will require us to anchor both the start and the end of the word.  This means using both ^ and $.  Let's start with the start of the word, whose first letter cannot be capitalized, and whose second letter is a vowel:
+^[a-z][aeiou]
+
+Now we're told that the third-to-last letter must be "x", "y", or "z".  We don't know how long our word is, and will thus us \w* to indicate that there might be zero or more characters in the middle of this word:
+^[a-z][aeiou]\w*
+
+Now, at the end, we know how to define the third-to-last letter, with a character class:
+^[a-z][aeiou]\w*[xyz]\w{2}$
+
+Notice how we anchor the \w{2} to the end.  This ensures that there are precisely two letters at the end following "x", "y", or "z".
+
+Finally, we have the third exercise:
+Find all words in the dictionary that contain three vowels in a row, but in which that three-vowel sequence is at least 5 characters after the front of the word and also 5 characters before the end of the word.
+In this case, we know that the middle of the regex must contain three vowels in a row:
+[aeiou]{3}
+
+But this must be preceded by at least five characters, and must be followed by at least five characters.  In other words, we can specify \w{5,} before and after the above middle section, and anchor the entire regexp to the start and end of the word:
+^\w{5,}[aeiou]{3}\w{5,}$
+
+How did you do?  Did your regexps work?  Let me know, by responding to this e-mail; I promise that I read every message I receive.

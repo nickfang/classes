@@ -1,0 +1,105 @@
+Hi again!   Today, we'll talk about one of the more complex — and powerful — aspects of regexps, namely grouping.  Actually, I'm mixing several different terms together when I talk about "grouping," but I think that this will be good enough for our purposes.
+
+Let's assume that I'm interested in all of those dictionary words that end with "t".  That's easy; we can use the regexp:
+t$
+
+to find such words.  But let's say that I want to find all of the words that end with "h", regardless of whether they're singular or plural.  In English, we often pluralize words by adding an "s", so we can use the regexp:
+hs?$
+
+In other words, we're looking for a "h", followed by an optional "s", at the end of the word.  This works just fine, until someone with a slightly better knowledge of grammar reminds me that plurals sometimes end with "s" and sometimes with "es".  So "wraith" will be pluralized as "wraiths", but "watch" will be pluralized as "watches".  How can I find all of these words, regardless of whether they're created by adding an "s" or an "es"?
+
+Your first instinct might be to say that both "e" and "s" are optional, as in:
+he?s?$
+
+But that's not quite right, because it means that both "e" and "s" are optional. So we might have a word that ends with both "es", another with neither, another with just "e", and still another with just "s".  What we really want to do is say that the combination of "e" and "s" together is supposed to be optional.  Either they both appear, or neither appears.
+
+We can do this with parentheses, as follows:
+h(es)?$
+
+In the above regexp, we group together "es" inside of parentheses.  The ? character, as usual, applies to what immediately precedes it, which is the combination of "es".  Note that this is difference from [es]?, which would mean that we optionally want one of the characters "e" or "s".  The (es)? syntax tells the regexp engine to find both of them, or to find neither of them.
+
+We can similarly use parentheses to influence groups of characters using +, *, and {min,max}.  For example:
+The regexp "tra( la)+" will match "tra la", "tra la la", and "tra la la" -- and of course, also "tra la la la la la la".
+The regexp "(,\s+){2,}" means that we're looking for two or more instances of a comma followed by one or more whitespace characters in a row.
+The regexp "\d{2}:\d{2}:\d{2}( \d+)?" will match a time in HH:MM:SS format, with an optional time zone component (in the form of +10) afterward.
+As you can see, this increases our flexibility to a very large degree, letting us making entire chunks of text within our regexp either optional, or repeat themselves a specified number of times.
+
+However, parentheses are also used in regexps for a completely different reason.  This can be confusing to people, but it can also be a bit confusing to the regexp engine, as we'll see in a moment.
+
+Here's the basic idea: Let's say that you are interested in finding US-style telephone numbers. Those contain three digits (the area code), and then another three digits, followed by four digits.  For example, the following text contains two such US-style phone numbers:
+His number used to be 212-555-1111, but he recently changed to 212-555-2222.
+We already know how to find and extract those phone numbers from the string, using character classes:
+\d{3}-\d{3}-\d{4}
+That will work just fine.  But what if, once we have retrieved the phone numbers, we're interested in the area codes?  Sure, we could then run a second regexp on the result of the first one. But that will take time, and be annoying.  Wouldn't it be nice if we could mark portions of our regexp, such that after we retrieve a match, we can grab specific portions of the match?
+
+We can indeed do this, by putting parentheses around what's of interest to us. Those parentheses define a group, which we can then retrieve from within our programming language:
+
+(\d{3})-\d{3}-\d{4}
+
+The above says, "I'm looking for three groups of numbers, separated by - characters, with with 3 digits, 3 digits, and 4 digits.  The first one should be marked as group #1, and I might want to retrieve it later."
+
+Now, you might be wondering two different things:
+How can it be that these parentheses define a numbered group, and also (in theory) can be used to apply ? or + or * or {min,max} to a group of characters?
+How do we know that this is group #1, and what can we do with that information?
+The answer to the first question is a bit complex, but it basically comes down to: It just works.  When you say "a(bc)+d" in a regexp, then you're using the parentheses for the sake of the + that comes after them.  But a side effect is that you're also defining a group.  There are ways in modern regexp engines to say that you want to define "non-capturing parentheses," but I'd argue that in most cases, that's not necessary.   So you defined a new group... so what?  It doesn't hurt you to have a number of groups.  Some really complex regexps can have a large number of groups.
+
+Now, how do we number the groups? The rule is actually very simple: We start counting opening parentheses from the left side of our regexp.  In the above example, our regexp contained a single pair of parentheses, so we knew that it was group #1.  But you can have groups within groups, in which case counting from the left side is quite important.
+
+Here's how we can retrieve the contents of group #1 using Python:
+import re
+s = 'His number used to be 212-555-1111, but he recently changed to 212-555-2222.'
+m = re.search('(\d{3})-\d{3}-\d{4}', s)
+if m:
+    print("Phone number is {0}, with an area code of {1}".format(m.group(0), m.group(1)))
+Notice that our match object, m, has a "group" method.  Usually, people who are new to regexps learn that they should invoke "m.group(0)" to get the entirety of the match that the regexp found.  And that's true!  But if you pass a different number to m.group, then you get the contents of the group that was matched.
+
+At the same time, the above code only finds the first telephone number. What's going on?
+
+As a general rule, regexps find only a single match in a search string. If you want to find all of the matches, you'll need to use a language-specific extension.  In some languages, such as JavaScript and PostgreSQL, you tell the regexp itself that you want it to be "global" — in other words, to find all matches, not just the first.  In Python, you must apply a different function, re.findall instead of re.search.  So let's try that:
+import re
+s = 'His number used to be 212-555-1111, but he recently changed to 212-555-2222.'
+re.findall('(\d{3})-\d{3}-\d{4}', s)
+
+The above works, but I get the following answer:
+['212', '212']
+
+What's going on?  Why did we only get the area code?
+
+The simple answer is that if you invoke re.findall with a regexp that contains no groups, you get back whatever matched the entire regexp.  But if the regexp contains one or more groups, then you'll get back only the matches to those groups, as a list of tuples.
+
+The solution, then, is to add groups.  We'll add a group around the entire telephone number (i.e., our entire regexp).  That way, re.findall will return a two-element tuple for each of our matches, one for each group.  Let's take a look:
+import re
+s = 'His number used to be 212-555-1111, but he recently changed to 212-555-2222.'
+re.findall('((\d{3})-\d{3}-\d{4})', s)   # Added a group here, around the entire regexp
+
+Now we get the following back:
+[('212-555-1111', '212'), ('212-555-2222', '212')]
+
+In other words, we have a list of tuples, and each tuple contains two strings.  But why does the entire match (i.e., the entire phone number) appear before the area code?  It's quite simple, actually, if confusing: Groups are numbered according to their opening parentheses.  So the group that matches the entire phone number is now group #1, and the group that matches the area code is group #2.  Follow the parentheses from left to right, and you'll see how this count works.
+
+Here, then, is a summary of what's going on:
+Parentheses in a regexp define a group.
+The groups are numbered, starting with #1, by counting the opening (left) parentheses, from left to right
+A group can be used to apply quantitative metacharacters (?, *, +, and {min,max}) to a group of characters, rather than a single character.  But this doesn't change the fact that we have a group.
+Each programming language has a different way of retrieving multiple matches from a string.
+In some cases, such as Python, the result you'll get from retrieving multiple matches will change if you introduce groups into the equation.
+Inside of a group, you can use all of the things we've discussed already having to do with regexps, including character classes
+You can even have a group inside of a group!
+Note that when you're using grep and grep-style regexps, you must put backslashes before each opening and closing parenthesis, if you wan to use them for grouping.  Thus:
+((\d{3})-\d{3}-\d{4})      # Python, Ruby, JavaScript, PostgreSQL
+\(\(\d{3}\)-\d{3}-\d{4}\)  # grep
+This is why Larry Wall, who invented Perl, called such use of backslashes "backslashitis."
+
+I hope that this makes sense; groups are one of the most common and useful parts of regexps, but they're also a bit tricky.  Here are some exercises to test your ability with groups, and to help you to think in terms of using them:
+Find the middle two digits from US-style Social Security numbers (###-##-####)
+Find all words in the dictionary that start with "ex" and end, optionally, with "ing".
+Find all words in which "la" appears at least twice in a row.
+In words containing "la" at least twice in a row, find the first two letters.
+
+I'll be back tomorrow with the answers to these exercises.
+
+Given how complex grouping in regexps can be, I'm especially eager to get your feedback from this lesson.  Did it help you to understand things better?  Do groups still seem to complex?  Regardless of what you think, I very much want to hear from you; please respond to this message, and let me know.
+
+Until next time,
+
+Reuven
