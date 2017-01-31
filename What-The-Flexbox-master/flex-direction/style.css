@@ -33,9 +33,16 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   display:flex;
   border:10px solid goldenrod;
   min-height:100vh;
+  /*flex-direction: row; this is the default so it doesn't do anything. The access is from left to right.*/
+  /*flex-direction: column;  this causes the access to go from top to bottom*/
+  /*flex-direction: reverse; access goes from right to left*/
+  /*flex-direction: colum-reverse;  access goes from bottom to top.*/
   flex-wrap:wrap;
+  /*flex-warp:wrap-reverse; 1 will start on the left and it would go up instead of down.*/
 }
 
 .box {
-  width:33.3333333%;
+  width: calc(33.3333% - 20px);
+  margin: 10px;
+  /* padding and border is part of the box model.  Margin is not*/
 }

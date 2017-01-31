@@ -57,6 +57,7 @@ a.button {
 
 .icon-bar a {
   flex:1;
+  /*min-height: 75px;*/
   text-align: center;
   padding:1.5rem;
   border-left:1px solid rgba(0,0,0,0.1);
@@ -68,7 +69,7 @@ a.button {
   border-left: 0;
 }
 
-.icon-bar a:first-child, .icon-bar a:hover {
+.icon-bar /*a:first-child, .icon-bar*/ a:hover {
   border-bottom: 5px solid rgba(0,0,0,0.1);
 }
 
@@ -92,7 +93,7 @@ a.button {
 
 
 /*
-  Everything So far is Cosmetic styling 
+  Everything So far is Cosmetic styling
 
   Flexbox + Important CSS Starts Here
 
@@ -102,3 +103,35 @@ a.button {
 /*
   Overall Layout
 */
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-wrap > * {
+  flex: 1 1 auto;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* content */
+.content {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* icon bar */
+.icon-bar {
+  display: flex;
+  align-items: center;
+}
+
+.icon-bar a {
+  flex: 1;
+}

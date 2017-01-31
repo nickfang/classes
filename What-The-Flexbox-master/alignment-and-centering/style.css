@@ -31,9 +31,11 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 /* We start writing out flexbox here. The above is just page setup */
 .container {
   display:flex;
-  border:10px solid mistyrose;
+  /*justify-content: flex-start; /* is for main-axis.  can be: flex-end, center - centers everything, space-between - evenly space between boxes, space-around - adds spaces to each side of each box*/
+  /* align-content: ; is for cross-axis.  only works with multiple rows*/
+  border:10px solid mistyrose;  /* give it a border to see what all the boxes are relative to. */
   height:100vh;
-  align-items:flex-start;
+  align-items:flex-start; /* need to make sure the .container has some height in order to vertically center with align-items: center;  align-item is for cross-axis */
 }
 
 .box {

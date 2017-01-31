@@ -29,14 +29,15 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 
 /* We start writing out flexbox here. The above is just page setup */
+
 .container {
   display:flex;
 }
 
 .box {
-  flex:1;
+  flex:1; /* by default each box will only take up as much width as the content.  flex:1 will scale each box to fit the width */
 }
 
 .box2 {
-  flex:2;
+  flex:2; /* flex:2; will give the current box twice a box with flex:1; It's all in proportion, not pixel or percentage*/
 }

@@ -34,10 +34,42 @@ a:hover {
   background:rgba(0,0,0,0.4);
 }
 
-
+/* flex container */
 .slider-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
+  display: flex;
+
+  /* align-items: center;  doesn't work because it doesn't streach when you set this.  We need both. */
 }
 
+/* our first flex item */
+.slider-nav li {
+  flex: 2; /* this is flex item -ish */
+  /* when you don't know what's going on, but a border on it to help see what's going on*/
+  border:1px solid red;
+  text-align: center;
+  display: flex;/* this is flex container -ish */
+}
+
+.slider-nav .arrow {
+  flex: 1;
+}
+
+.arrow a {
+  font-size: 30px;
+}
+
+.slider-nav a {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* this is the flex item */
+.slider-nav span {
+  display:block;
+  width: 100%;
+  text-align: center;
+}

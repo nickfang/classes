@@ -33,12 +33,22 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
   display:flex;
 }
 
+/*.box {
+	flex-grow:1;   when you have extra space, how much extra should you take
+	flex-shrink:1;  How do boxes slim down if there is not enough space.
+	flex-basis:1;
+}*/
+
 .box1 {
-  flex:10 5 400px;
+
+  /*flex:10 5 400px;*/
+  flex-basis: 400px;
+  flex-grow:1;  /* default flex-grow is 0.  If there is extra room, don't do anything.  flex 1 will take up everything if .box2 flex-grow is 0 */
+  flex-shrink:10; /* default flex-shrink is 1.  How much of myself should I give up in proportion to the other boxes.*/
 }
 
 .box2 {
-  flex:1 1 400px;
+  flex:1 1 400px;  /* grow, shrink, basis.  A way to write the properties in one line */
 }
 
 
