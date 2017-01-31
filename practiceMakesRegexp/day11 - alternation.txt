@@ -1,0 +1,57 @@
+Hi again!  Today, we're going to talk about alternation in regular expressions.  This is a really simple idea, and while it's one that I don't personally use that much in my regexps, it is undoubtedly quite useful.
+
+If you think about it from a logical perspective, regexps are just a bunch of "and" statements together.  In the regexp "a.+c*d", we say that we want a, and then any number of non-newline characters and then zero or more c characters and then one d character.  What if we want to say I want "a or b", rather than "a and b"?
+
+That's where alternation comes in: It allows us to say that we want one thing or another, but not both.  For example, let's say that we're searching for a "b" tag in HTML.  (Note: Regexps are not the right tool to work with XML, HTML, or JSON!  But searching for a particular tag, or even a pair of tags, can work quite well.)  We could thus use a regexp that looks like this:
+<\s*b\s*>
+
+Notice that I added \s* before and after the "b", to allow for whitespace before and after the tag's name.  Perhaps it's not necessary, but it's not an inherently bad thing to do.    Let's even make this a bit more exciting, and add a slash, to match both opening and closing tags:
+<\s*/?\s*b\s*>
+
+Now we have a tag in which there is definitely a "b", and there might be a "/" (indicating a closing tag), and there is optional whitespace around each of these parts.  So far, so good.
+
+But then the specifications on our project change, and we want to find not only boldface text, but also emphasized text, but also headlines, level 1 through 6 (i.e., tags for "h1" through "h6").  If the specifications had asked us to look for either boldface or italic, then we could have used a character class, as follows:
+<\s*/?\s*[bi]\s*>
+
+Notice that the above regexp says that we want either "b" or "i".  But we're currently looking for something a bit more complex, namely either "b" or any one of h1, h2, h3, h4, h5, or h6.  (Does anyone really use h6 nowadays?  Probably not.  But I digress...)
+
+The syntax for alternation is a|b, using a pipe character.  Thus, to say that you want either "cat" or "dog", your regexp would look like:
+cat|dog
+
+And if you want "cat" or "dog" or "monkey", then you could say
+cat|dog|monkey
+
+Simple, right?  Well, mostly.  If we try to apply our simple alternation to our original problem, we'll end up in trouble:
+<\s*/?\s*b|h[1-6]\s*>
+
+The above might appear as though it's saying we want to have a tag containing either a "b" or h[1-6].  (Note the use of a character class in order to shorten the description of what we want.)  The problem is that this won't work, because the | separator doesn't know where to start or end!  Our regexp thus means that we either want "<\s*/?\s*b" or we want "h[1-6]\s*>".  That's definitely not what we want!
+
+What we need to do is somehow limit the alternation, to indicate that just the tag's text is to be considered.  And for that, we'll use our old friends parentheses.  That's right; if I say that I'm looking for
+ab|c|de
+
+then that tells the regexp engine that I want "ab" or "c" or "de".  But if I say
+a(b|c|d)e
+
+then that means I want a, followed by either b, c, or d, and then followed by e.  (I would probably use a character class here, given that we have single-letter options, but the point is the same.)
+
+Thus, in order to find our HTML tags, we'll need to use parentheses around the different alternation options:
+<\s*/?\s*(b|h[1-6])\s*>
+
+And now our regexp will do what we want.
+
+Or will it? Now, whether we like it or not, we have created a numbered group, which will be captured by the regexp engine.  That's probably fine, but as we have seen before, there are languages (e.g., Python) in which the existence of a group means that the output from our regexp methods might change.  It also means that if you have a working regexp, and decide to add alternation inside of it, the count of your groupings might change.
+
+So, here are some ways that we can use alternation:
+"I am (busy|swamped|tired|out of the office) today" matches a variety of excuses.
+"(eck|eque)$" matches US vs. British spellings at the ends of words, for such words as "check" vs. "cheque".
+"I will meet (Tom|Dick|Harry) tonight" keeps your dinner options open.
+"^(p?re|de|un)\w*j\w*(ing|er|ed)$" matches a variety of words containing the letter "j" with prefixes and suffixes
+Let's give you some exercises to practice using alternation.
+Find all words that contain either "oo" or "ee" immediately after the letter "r" and before any of the letters "p", "s", or "t".
+Find words in the dictionary that start with "b" and have either three vowels or three consonants (i.e., non-vowels) in a row.
+Find words that contain, inside of them, the words "small", "medium", or "large".
+I'll be back next time with the solutions to these exercises.
+
+Until then,
+
+Reuven

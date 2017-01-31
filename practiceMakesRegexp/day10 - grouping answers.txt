@@ -1,0 +1,32 @@
+Hi again!  Last time, I told you about both kinds of grouping that we can do with parentheses.  We can use them to apply quantifiers (i.e., ?, *, +, and {min,max}) to a group of characters, rather than a single character. And we can also use groups to identify portions of our regexp that we'll want to retrieve later on.  The good and bad news is that parentheses are used for both purposes, which means that when we say (ab)+, we're not only indicating that the two-character combination "ab" may appear one or more times in a row, but are also defining a numbered capture group. This can get a bit confusing, but you should (I hope) get used to it after a while.
+
+Yesterday, I gave you four exercises meant to improve your understanding of regexps.  Let's review the answers, and discuss how we could solve these:
+Find the middle two digits from US-style Social Security numbers (###-##-####)
+So, if a Social Security number looks like \d{3}-\d{2}-\d{4}, and we want to find the middle two digits, then we'll just make a group around those two digits:
+\d{3}-(\d{2})-\d{4}
+Notice how we can put \d{2} inside of the parentheses.  We can, in fact, put any combination of characters and metacharacters inside of parentheses.  Putting characters inside of a group doesn't change or limit their meaning; it merely allows us to retrieve that particular part later on.  In this case, we would be able to grab the middle two digits via group #1.
+
+Now, you could argue that there's no need for a group here, since we can just look for any two digits.  But of course, that would result in a great many false positives, since two-digit numbers are common.  We could also make the regexp start and end with - characters, but even that wouldn't guarantee that these were the middle digits from a Social Security Number.  The only real way is to find the entire SSN, and then find the two central digits within it.
+Find all words in the dictionary that start with "ex" and end, optionally, with "ing".
+The regexp here combines anchors and a group.  The regexp will look as follows:
+^ex.*(ing)?$
+How does the above regexp work?  First, it anchors the "ex" to the start of the line, which will be the start of the word.  Next, it uses .* to indicate that there will be zero or more characters following the "exh" and before the (optional) "ing".  Finally, we say that "ing" is optional by putting it in parentheses, having a ? follow it, and then anchoring all of that to the end of the word.
+Find all words in which "la" appears at least twice in a row.
+In this case, the regexp is quite simple:
+(la){2,}
+
+We put "la" in parentheses, to treat it as a single unit, and then use {min,max} to indicate that we want that two-letter pair to appear at least twice in a row.  Of course, we also could have written it as
+la(la)+
+But I believe that the first is a bit more expressive.
+In words containing "la" at least twice in a row, find the first two letters.
+Finally, we want to take the above regexp and find the first two letters of any such word that was matched.  Thus, we'll need to expand the regexp a bit:
+
+^(..).*la(la)+
+
+In other words: We're looking to capture the first two letters, meaning the first two things that are anchored to the front of the line.  Then we might have other characters, which we indicate with .*.  Finally, we return to the previous question's answer.
+
+Did you get these?  If so, then congratulations — and if not, then you should realize that grouping is one of the most challenging topics in regexps.  Knowing how to use groups, and how they interact with your programming language, are important things to check and feel comfortable with.
+
+I'll be back tomorrow with another topic, alternation!
+
+Reuven

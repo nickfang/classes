@@ -1,0 +1,35 @@
+Hi!  I'm back, with solutions to the exercises about regexp alternation.  Let's get right to the exercises:
+Find all words that contain either "oo" or "ee" immediately after the letter "r" and before any of the letters "p", "s", or "t".
+In this case, we know that we're going to want the letter "r", followed right away by either "ee" or "oo".  That'll look like this:
+r(oo|ee)
+
+But of course, we then want to have "p", "s", or "t" following that.  We could use alternation, but given that these are single-character options, I suggest that we use a character class:
+r(oo|ee)[pst]
+
+In my dictionary, I find 349 such words, the final one of which is "yellowroot".  Which, I must admit, isn't quite as exciting as "vandalroot".
+Find words in the dictionary that start with "b" and have either three vowels or three consonants (i.e., non-vowels) in a row.
+Once again, this regexp almost writes itself, if we think about what's being described.  The word needs to start with "b", which means anchoring it to the start:
+^b
+
+But then we need either three vowels in a row or three non-vowels in a row.  We can use alternation to choose between two different character classes:
+^b\w*([aeiou]{3}|[^aeiou]{3})
+
+Notice that in the above regexp, each of the alternatives is itself a semi-complex regexp — a character class followed by {min,max}.
+
+Also note that if you're doing this using "grep', you'll need backslashes before the parentheses, the curly braces, and the alternation operator:
+$ grep '^b\w*\([aeiou]\{3\}\|[^aeiou]\{3\}\)' words.txt
+
+I know.  Yuck.
+
+Find words that contain, inside of them, the words "small", "medium", or "large".
+This requires a simple alternation regexp:
+(small|medium|large)
+
+Or, if you want to make it work with grep (and all of the necessary backslashes):
+$ grep '\(small\|medium\|large\)' words.txt | cat -n | tail
+
+Did you get these right?  As I mentioned in the last e-mail message, alternation is a simple idea, and also simple to execute with, assuming that you don't forget the parentheses.
+
+Next time, we'll talk about some more complex ideas in regexps.
+
+Until then,
