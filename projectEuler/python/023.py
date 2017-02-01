@@ -39,8 +39,11 @@ def getAbunduntNumbers(num):
 
 def removeAbunduntNumbers():
 	nums = []
-	for x in range(MAX):
+	aNums = getAbunduntNumbers(MAX)
+	for x in range(24, MAX+1):
 		nums.append(int(x))
+	x = 24
+	for
 	print(nums)
 
 removeAbunduntNumbers()
