@@ -17,6 +17,15 @@ html {
 	text-rendering: optimizeLegibility;
 }
 
+.clearfix {zoom: 1}
+.clearfix:after {
+	content: '.';
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
 /* ------------------------------------------------------------------------------  */
 /* Reusable Components                                                             */
 /* ------------------------------------------------------------------------------  */
@@ -35,6 +44,7 @@ section {
 .box {
 	padding: 1%;
 }
+
 
 /* ------------------------------------------------------------------------------  */
 /* Headings                                                                        */
@@ -109,6 +119,38 @@ h2:after {
 	margin-bottom: 10px;
 }
 
+.icon-small {
+	display: inline-block;
+	width: 30px;
+	text-align: center;
+	color: #E67E22;
+	font-size: 120%;
+	margin-right: 10px;
+	/* secrets to align text and icons */
+	line-height: 120%
+	vertical-align: middle;
+	margin-top: -5px;
+}
+
+/* ------------------------------------------------------------------------------  */
+/* Links                                                                            */
+/* ------------------------------------------------------------------------------  */
+
+a:link,
+a:visited {
+	color: #E67e22;
+	text-decoration: none;
+	padding-bottom: 1px;
+	border-bottom: 1px solid #E67e22;
+	transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+	color: #555;
+	border-bottom: 1px solid transparent;
+}
+
 /* ------------------------------------------------------------------------------  */
 /* Buttons                                                                         */
 /* ------------------------------------------------------------------------------  */
@@ -164,6 +206,7 @@ header {
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
+	background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -257,4 +300,119 @@ header {
 .meal-photo img:hover {
 	opacity:1;
 	transform: scale(1.03);
+}
+
+/* ------------------------------------------------------------------------------  */
+/* How It Works                                                                    */
+/* ------------------------------------------------------------------------------  */
+
+.section-steps {
+	background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+	text-align: right; /*text-align works for all inline block elements*/
+	padding-right: 3%;
+	margin-top: 30px;
+}
+
+.steps-box:last-child {
+	padding-left: 3%;
+	margin-top: 70px;
+}
+
+.app-screen {
+	width: 40%;
+}
+
+.works-step {
+	margin-bottom: 50px;
+}
+
+.works-step: last-of-type {
+	margin-bottom: 80px;
+}
+
+.works-step div {
+	color: #e67e22;
+	border: 2px solid #e67e22;
+	display: inline-block;
+	border-radius: 50%;
+	height: 55px;
+	width: 50px;
+	text-align: center;
+	padding: 5px;
+	float: left;
+	font-size: 150%;
+	margin-right: 25px;
+}
+
+.btn-app:link,  /* there cannot be a space between the : and link */
+.btn-app:visited {
+	border: 0;
+}
+
+.btn-app img {
+	height: 50px;
+	width: auto;
+	margin-right: 10px;
+}
+
+/* ------------------------------------------------------------------------------  */
+/* Cities                                                                 			  */
+/* ------------------------------------------------------------------------------  */
+
+.section-cities img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+}
+
+.city-feature {
+	margin-bottom: 5px;
+}
+
+
+/* ------------------------------------------------------------------------------  */
+/* Testimonials                                                                 			  */
+/* ------------------------------------------------------------------------------  */
+
+.section-testimonial {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+	background-size: cover;
+	color: #ffffff;
+	background-attachment: fixed;
+
+}
+
+blockquote {
+	padding: 2%;
+	font-style: italic;  /* make sure the webfont is included at top of index.html */
+	line-height: 145%;
+	position: relative;
+	margin-top: 40px;
+}
+
+/*Want to use quotation mark.  Goto: https://css-tricks.com/snippets/html/gliphs*/
+blockquote:before {
+	content: "\201C"; /* how to put text on website through css */
+	font-size: 400%;
+	display: block;
+	position: absolute;  /* ensure parent has a relative position */
+	top: -5px;
+	left: -5px;
+}
+
+cite {
+	font-size: 90%;
+	margin-top: 25px;
+	display: block;
+}
+
+
+cite img{
+	height: 45px;
+	border-radius: 50%;
+	margin-right: 10px;
+	vertical-align: middle;
 }
