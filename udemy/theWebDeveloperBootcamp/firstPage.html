@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- metadata goes in the head -->
+	<title>My First Page</title>
+</head>
+<body>
+<!-- content goes in the body -->
+	<h1>This is my first tag!!!</h1>		<!-- headings are block level elements -->
+	<p></p>					<!-- this is a block element -->
+	<strong></strong>		<!-- strong is inline element use strong since strong is about structure and bold is styling -->
+	<em></em>				<!-- use this instead of <i></i> since emphasis is about structure and italicized is styling -->
+
+<!--
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Evolves Into</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<img width="50" src="http://img4.wikia.nocookie.net/__cb20140328190757/pokemon/images/thumb/2/21/001Bulbasaur.png/200px-001Bulbasaur.png"></img>
+				</td>
+				<td>Bulbasaur</td>
+				<td>Grass/Poison</td>
+				<th><a href="http://pokemon.wikia.com/wiki/Ivysaur">Ivysaur</a></th>
+			</tr>
+			<tr>
+				<td>
+					<img width="50" src="http://img4.wikia.nocookie.net/__cb20140724195345/pokemon/images/thumb/7/73/004Charmander.png/200px-004Charmander.png"></img>
+				</td>
+				<td>Charmander</td>
+				<td>Fire</td>
+				<th><a href="http://pokemon.wikia.com/wiki/Charmeleon">Charmeleon</a></th>
+			</tr>
+			<tr>
+				<td>
+					<img width="50" src="http://img1.wikia.nocookie.net/__cb20140328191525/pokemon/images/thumb/3/39/007Squirtle.png/200px-007Squirtle.png"></img>
+				</td>
+				<td>Squirtle</td>
+				<td>Water</td>
+				<th><a href="http://pokemon.wikia.com/wiki/Wartortle">Wartortle</a></th>
+			</tr>
+		</tbody>
+	</table> -->
+
+	<!-- action - where the form send data to -->
+	<!-- method - what HTTP method (get/post) -->
+
+<!-- 	<form>
+		<label>
+			Username:
+			<input type="text" name="username" placeholder="username">
+		</label>
+		<label>
+			Password:
+			<input type="password" name="password" placeholder="password">
+		</label>
+		<input type="submit">
+	</form>
+
+	when you press submit, because we have name property, the URL will look like this:
+	file:///C:/Users/nfang/repos/classes/udemy/completeWebDeveloper1/firstPage.html?username=username&password=pass
+
+-->
+
+<!--
+	<form>
+		<label for="username">Email:</label>
+		<input id="email" type="email" name="email" placeholder="email" required>
+		<label for="password">Password:</label>
+		<input id="password" type="password" name="password" placeholder="password" requred>
+		<input type="submit">
+	</form> -->
+
+<!-- radio button -->
+<!-- select tag -->
+<!-- textarea tag -->
+
+<p>Do you prefer cats or dog</p>
+
+<form>
+	<label for="dogs">Dogs: </label>
+	<input name="petChoice" id="dogs" type="radio" value="DOGS">
+	<label for="cats">Cats: </label>
+	<input name="petChoice" id="cats" type="radio" value="CATS">
+
+	<p>What's your current mood?</p>
+	<select name="mood">
+		<option value="happy">:)</option>
+		<option value="neutral">:|</option>
+		<option value="sad">:(</option>
+	</select>
+
+	<textarea name="paragraph" rows="10" cols="10"></textarea>
+
+	<button>Go!</button>
+</form>
+
+</body>
+</html>
