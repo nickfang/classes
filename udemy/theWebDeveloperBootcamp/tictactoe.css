@@ -1,0 +1,45 @@
+h1 {
+	text-align: center;
+}
+
+table {
+	margin: auto;
+}
+
+td {
+	padding: 49px;
+}
+
+.vertical {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.horizontal {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+/*#top {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+}
+
+#left {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#middle {
+	border: 1px solid black;
+}
+
+#right {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+#bottom {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}*/
