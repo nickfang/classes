@@ -1,0 +1,38 @@
+DOM
+
+Document Object Model
+
+Interface between javascript and html/css.
+a bunch of javascript objects that model elements.
+
+If you want to see the document object, type this in the console:
+	console.log(dir(document));
+
+
+document.getElementById()
+document.getElementsByClassName()
+document.getElementsByTagName()
+document.querySelector()
+document.querySelectorAll()
+
+
+element.classList.add()
+element.classList.remove()
+element.classList.toggle()
+
+Use this to retrieve the textContent
+tag.textContent
+
+Use this to alter the textContent.  It treats tags as strings.
+tag.textContent = "blah blah blah"
+
+keeps the internal tags
+tag.innerHTML
+
+
+var link = document.querySelector("a");
+link.getAttribute("href");
+link.setAttribute("href", "www.dogs.com");
+
+var img = document.querySelector("img");
+img.setAttribute("src", "corgi.png");

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selectors</title>
+</head>
+<body>
+	<h1>Hello</h1>
+	<h1>Goodbye</h1>
+	<ul>
+		<li id="highlight">List Item 1</li>
+		<li class="bolded">List Item 2</li>
+		<li class="bolded">List Item 3</li>
+	</ul>
+	<script>
+
+		// if you try to get an element that is not there, document will return null
+
+		var tag = document.getElementById("highlight");
+		console.log(tag);
+
+		var tags = document.getElementsByClassName("bolded");
+		console.log(tags);
+		tags.length;
+		// this does not work
+		// tags.forEach();
+		console.dir(tags[0]);
+
+		// always returns a list of elements, even if there is only one.
+		var tags = document.getElementsByTagNames("li");
+		console.log(tags);
+		var tags = document.getElementsByTagNames("h1");
+		console.log(tags);
+		var tags = document.getElementsByTagNames("body");
+		console.log(tags);
+		var body = document.getElemetnsByTagNames("body")[0];
+		console.log(body);
+
+		// querySelector only returns one element.  will give back the first element.
+		var h1 = document.querySelector("h1");
+		console.log(h1);
+		var li = document.querySelector("#highlight");
+		console.log(li);
+		var li = document.querySelector(".bolded");
+		console.log(li);
+
+		// returns a list
+		var lis = document.querySelectorAll("li");
+		console.log(lis);
+		var li = document.querySelectorAll("li")[0];
+
+
+	</script>
+</body>
+</html>
