@@ -1,0 +1,4 @@
+1. show full path
+2. show query params
+3. show method name
+4. show headers

@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>hello!</title>
+    </head>
+    <body>
+        <h1>hello</h1>
+        <p>path: {{ request.path }}</p>
+        <p>query: {{ request.GET }}</p>
+        <h2>Headers</h2>
+        {% for k, v in request.META.items %}
+            {% if k|slice:"0:5" == "HTTP_" %}
+                <p>{{ k }}: {{ v }}</p>
+            {% endif %}
+        {% endfor %}
+        <h2>Now: {{ now|date:"Y-m-d f A" }}</h2>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+1. create base template with blocks: title & content
+2. create two templates inheriting from base
+3. use them from views
+4. make index use base

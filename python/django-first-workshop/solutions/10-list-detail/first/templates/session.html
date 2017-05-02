@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Session{% endblock %}
+{% block content %}
+    <h1>Session</h1>
+    {% for k, v in session.items %}
+        <p>{{ k }}: {{ v }}</p>
+    {% empty %}
+        <p>session is empty</p>
+    {% endfor %}
+    <form method="POST" action=".">
+        <h2>Save to session</h2>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}

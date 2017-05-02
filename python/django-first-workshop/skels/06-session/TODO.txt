@@ -1,0 +1,6 @@
+1. ensure session is in settings: app, middleware
+2. create session tables
+3. add url, view, entry in base.html for /session/
+4. in session view dump session content
+5. add url view for updating session
+6. create form for upadting session

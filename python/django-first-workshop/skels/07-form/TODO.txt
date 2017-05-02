@@ -1,0 +1,6 @@
+1. create a form in forms.py
+2. validate that key and value cant be same
+3. use form from view
+4. use form in template
+5. merge the two views into one (more djangonic pattern)
+6. enable CSRF middleware, use csrf-token

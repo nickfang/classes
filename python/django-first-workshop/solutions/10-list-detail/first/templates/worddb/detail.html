@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}word: {{ word }}{% endblock %}
+
+{% block content %}
+    <h1>{{ word }}</h1>
+    {% for pronunciation in word.pronunciation_set.all %}
+        <p><strong>{{ pronunciation.system }}</strong>: {{ pronunciation.text }}</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}words{% endblock %}
+
+{% block content %}
+    <h1>Words</h1>
+    {% for word in words %}
+        <p><a href="/word/{{ word.text }}/">{{ word }}</a></p>
+    {% endfor %}
+{% endblock %}

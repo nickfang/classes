@@ -1,0 +1,8 @@
+1. create a new app, and model: Word, Pronunciation
+2. create migration
+3. migrate
+4. checkout model in shell: find count
+5. create instance in shell
+6. delete instance in shell
+7. script to import hindic.txt
+8. find all words that have same pronunciation as "टू"

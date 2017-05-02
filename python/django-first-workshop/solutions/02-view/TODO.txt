@@ -1,0 +1,4 @@
+1. Create a new app: hello
+2. update urls.py
+3. add a hello world view
+4. add a named view

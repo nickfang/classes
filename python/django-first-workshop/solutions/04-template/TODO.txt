@@ -1,0 +1,8 @@
+1. configure template settings
+2. create template folder
+3. create template
+4. add a new view
+5. render the template
+6. show path, query and headers
+7. pass current time as context
+8. show time in "2017-03-19 2:30PM" format
