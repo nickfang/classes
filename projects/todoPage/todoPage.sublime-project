@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "P:\\todoPage"
+		},
+		{
+			"path": "node_modules"
 		}
 	]
 }
