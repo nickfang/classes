@@ -6,6 +6,9 @@ class BinaryHeap(object):
 		self.heapList = [0]
 		self.currentSize = 0
 
+	def __str__(self):
+		return str(self.heapList)
+
 	# perculate an inserted item up until it is in the right position
 	def percUp(self, i):
 		while i // 2 > 0:
@@ -64,8 +67,15 @@ class BinaryHeap(object):
 
 
 A = []
+output = []
 for x in range(10):
 	A.append(random.randint(0,100))
 binHeap = BinaryHeap()
 binHeap.buildHeap(A)
-print(binHeap.heapList)
+print(binHeap)
+for x in range(10):
+	output.append(binHeap.delMin())
+	binHeap.percDown(1)
+print(output)
+
+
