@@ -25,7 +25,7 @@ storeSchema.pre("save", function(next) {
 		next();
 		return;
 	}
-	// TODO: name sure slugs are unique
+	// TODO: make sure slugs are unique
 	this.slug = slug(this.name);
 	next();
 })
