@@ -15,7 +15,25 @@ const storeSchema = new mongoose.Schema({
 		type: String,
 		trim: true
 	},
-	tags: [String]
+	tags: [String],
+	created: {
+		type: Date,
+		default: Date.now
+	},
+	location: {
+		type: {
+			type: String,
+			default: "Point"
+		},
+		coordinates: [{
+			type: Number,
+			required: "You must supply coordinates!"
+		}],
+		address: {
+			type: String,
+			required: "You must supply an address!"
+		}
+	}
 });
 
 // NOTE: this can't be an arrow function (needs to be a proper function) because we need the this pointer.
