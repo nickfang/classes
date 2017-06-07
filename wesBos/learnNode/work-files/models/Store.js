@@ -33,7 +33,8 @@ const storeSchema = new mongoose.Schema({
 			type: String,
 			required: "You must supply an address!"
 		}
-	}
+	},
+	photo: String
 });
 
 // NOTE: this can't be an arrow function (needs to be a proper function) because we need the this pointer.
