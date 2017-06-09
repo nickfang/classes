@@ -20,7 +20,6 @@ const multerOptions = {
 };
 
 exports.homePage = (req, res) => {
-	console.log(req.name);
 	res.render("index");
 };
 
@@ -38,20 +37,20 @@ exports.resize = async (req, res, next) => {
 	}
 	const extension = req.file.mimetype.split("/")[1];
 	req.body.photo = `${uuid.v4()}.${extension}`;
-	console.log(req.body.photo);
 	// now we resize
 	const photo = await jimp.read(req.file.buffer);
 	await photo.resize(800, jimp.AUTO);
 	await photo.write(`./public/uploads/${req.body.photo}`);
-	console.log("Photo processed", photo);
 	// once we have written the photo to our filesystem, keep going!
 	next();
 }
 
 exports.createStore = async (req, res) => {
 	// NOTE: check if the data being passed back is good.
+	// req.body.location.coordinates[0] = Number(req.body.location.coordinates[0]);
+	// req.body.location.coordinates[1] = Number(req.body.location.coordinates[1]);
 	// res.json(req.body);
-	console.log(req.body);
+	// console.log("createStore:", req.body);
 	const store = await (new Store(req.body)).save();
 	// NOTE: how to add new elemnts to mongodb
 	// store.age = 10
@@ -68,13 +67,13 @@ exports.createStore = async (req, res) => {
 
 exports.getStores = async (req, res) => {
 	const stores = await Store.find();
-	console.log(stores);
 	res.render("stores", {title: 'Stores', stores});
 }
 
 exports.editStore = async (req, res) => {
 	// find the store given the ID
 	const store = await Store.findOne({ _id: req.params.id });
+	// console.log("editStore:",store);
 	// TODO: confirm they are the owner of the store
 	// Render out the edit form so the user can update
 	// NOTE: in ES6, if the key and value are the same, you just have to write it once.
@@ -90,6 +89,7 @@ exports.updateStore = async(req, res) => {
 		new: true, // return the new store instead of the old one
 		runValidators: true
 	}).exec();
+	// console.log("updateStore", req.body);
 	req.flash("success", `Successfully updated <strong>${store.name}</strong>. <a href="/store/${store.slug}">View Store </a>`);
 	res.redirect(`/stores/${store._id}/edit`);
 	// redirect them to the store and tell them it worked

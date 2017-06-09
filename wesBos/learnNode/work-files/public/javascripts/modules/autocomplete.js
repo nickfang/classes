@@ -6,6 +6,7 @@ function autocomplete(input, latInput, lngInput) {
 		const place = dropdown.getPlace();
 		latInput.value = place.geometry.location.lat();
 		lngInput.value = place.geometry.location.lng();
+		console.log("lat:", latInput.value);
 	});
 	// if someone hits enter on the address field, don't submit the form
 	input.on("keydown", (e) => {
