@@ -1,0 +1,6 @@
+2017-06-09 16:42   this is a log message
+2017-06-09 16:42   this is another log message
+2017-06-09 16:42   this is a log message
+2017-06-09 16:42   this is another log message
+2017-06-09 17:15   this is a log message
+2017-06-09 17:15   this is another log message
