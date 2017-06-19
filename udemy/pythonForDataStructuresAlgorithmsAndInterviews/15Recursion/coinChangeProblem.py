@@ -72,7 +72,7 @@ def recCoinDyn(target, coins, cache):
 target = 74
 coins = [1,5,10,25]
 cache = [0] * (target+1)
-# print(recCoinDyn(target, coins, cache))
+print(recCoinDyn(target, coins, cache))
 
 
 """

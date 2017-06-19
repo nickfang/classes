@@ -18,20 +18,14 @@ print(sumFunction(43215))
 
 #TODO: come back and look at this amd make it work for overlapping words
 # this solution doesn't work
-def wordSplit(phrase, listOfWords, output = None):
-	if phrase == "":
-		return output
+def wordSplit(phrase, listOfWords):
+	output = []
 	for word in listOfWords:
 		# if the word is not found return
-		leftWord = phrase.split(word)
-		if len(leftWord) == 1:
-			wordSplit("", [], [])
-		else:
-			if output == None:
-				output = [word]
-			else:
-				output.append(word)
-			wordSplit("".join(leftWord), listOfWords, output)
+		if phrase.startswith(word):
+			output.append(word)
+			return output + wordSplit(phrase.lstrip(word), listOfWords)
+	return output
 
 # from solution >>
 # this solution doesn't take into account overlapping words. Actually, thie keeps you from splitting a word into a non word
@@ -50,8 +44,8 @@ def wordSplit2(phrase, listOfWords, output = None):
 
 # Create a function called wordSplit() which takes in a string phtase and set listOfWords.  The function will then determine if it is possible to split the string in a way in which words can be made form the list of words.  You can assume the phrase will only contain words found in the dictionary if it is completely splittable.
 # ["the", "man", "ran"]
-print(wordSplit2("themanran", ["the", "ran", "man"]))
+print(wordSplit("themanran", ["the", "ran", "man"]))
 # ["i", "love", "dogs", "John"]
-print(wordSplit2("ilovedogsJohn", ["i", "am", "a", "dogs", "lover", "love", "John"]))
+print(wordSplit("ilovedogsJohn", ["i", "am", "a", "dogs", "lover", "love", "John"]))
 # []
-print(wordSplit2("themanran", ["clown", "ran", "man"]))
+print(wordSplit("themanran", ["clown", "ran", "man"]))
