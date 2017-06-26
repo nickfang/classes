@@ -84,7 +84,6 @@ exports.updateStore = async(req, res) => {
 	// set  the location data to be a point
 	req.body.location.type = "Point";
 	// find and update the store
-
 	const store = await Store.findOneAndUpdate({ _id: req.params.id}, req.body, {
 		new: true, // return the new store instead of the old one
 		runValidators: true
@@ -100,3 +99,10 @@ exports.getStoreBySlug = async (req, res, next) => {
 	if (!store) return next();
 	res.render("store", { store, title: store.name });
 }
+
+exports.getStoresByTag = async (req, res) => {
+	const tags = await Store.getTagsList();
+	const tag = req.params.tag;
+	// res.json(tags);
+	res.render("tags", { tags, tag, title: "Tags" });
+};
