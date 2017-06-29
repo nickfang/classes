@@ -1,0 +1,40 @@
+Chrome 59 - Released June 20
+- Animated PNG Supported(APNG)
+- Streams API Improvements: Piping
+- Headless Chrome
+- Native Notifications (macOS)
+- Image Capture API
+- Devtools:
+	- Code Coverage - shows how much of your code is unused
+	- Screenshots - can capture your entire page in a single image
+	- Blocking - pretend that a request failed or was blocked.
+
+Firefox 54 - Released June 13
+- Date.UTC() conforms to ES2017
+- WebRTC TCP ICW candidate support enabled by default.
+- Devtools
+	- Requests - supports data size
+
+*Javascript shared memory and atomics support - allows other languages to compile to javascript.
+
+Framework News
+- V8 6.0 (rest/spread properties on ojbects)
+- N-API for Node (experimental)
+- npm 5
+- ES Lint v4
+- FYI Angular 5 due Sept 19, 2017
+
+*spreadsheet in 25 lines of code.
+
+Hackathons:
+Angelhack 2017 Free: Free4BEW
+
+https://github.com/edgeATX/edgeATX.github.io
+
+
+
+Arduino Node
+
+Jonny-Five Node Library: johnny-five.io
+The Javascript Robotics Programming Framework
+
