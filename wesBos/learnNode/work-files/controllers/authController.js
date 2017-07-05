@@ -25,7 +25,7 @@ exports.isLoggedIn = (req, res, next) => {
 	}
 	req.flash("error", "You must be logged in!");
 	res.redirect("/login");
-}
+};
 
 exports.forgot = async (req, res) => {
 	// 1. see if user exists
@@ -40,7 +40,7 @@ exports.forgot = async (req, res) => {
 	await user.save();
 	// 3. Send them an email with the token
 	const resetURL = `http://${req.headers.host}/account/reset/${user.resetPasswordToken}`;
-	req.flash("success", `You have been emailed a password reset link.  ${resetURL}`)
+	req.flash("success", `You have been emailed a password reset link.  ${resetURL}`);
 	// 4. redirect to login page
 	res.redirect("/login");
 };
@@ -74,7 +74,7 @@ exports.update = async (req, res) => {
 	});
 	if (!user) {
 		req.flash("error", "Password reset is invalid or has expired");
-		return res.rediredt("/loging");
+		return res.redirect("/login");
 	}
 	const setPassword = promisify(user.setPassword, user);
 	await setPassword(req.body.password);

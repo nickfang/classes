@@ -56,7 +56,7 @@ storeSchema.pre("save", async function(next) {
 	next();
 });
 
-// uss a proper function here so you can use the this pointer.  arrow function won't work
+// us a proper function here so you can use the this pointer.  arrow function won't work
 storeSchema.statics.getTagsList = function() {
 	return this.aggregate([
 		{ $unwind: "$tags" },
