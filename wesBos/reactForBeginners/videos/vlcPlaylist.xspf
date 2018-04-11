@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Playlist</title>
+	<trackList>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/01%20-%20Introduction,%20Tooling%20and%20Editor%20Setup.mp4</location>
+			<duration>824379</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/02%20-%20Thinking%20and%20Understanding%20React%20Components.mp4</location>
+			<duration>445034</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/03%20-%20Creating%20our%20First%20Components.mp4</location>
+			<duration>721050</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/04%20-%20Writing%20HTML%20with%20JSX.mp4</location>
+			<duration>560855</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>3</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/05%20-%20Loading%20CSS%20into%20our%20React%20Application.mp4</location>
+			<duration>178446</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>4</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/06%20-%20Creating%20our%20application%20layout%20with%20components.mp4</location>
+			<duration>644842</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>5</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/07%20-%20Passing%20Dynamic%20data%20with%20props.mp4</location>
+			<duration>508146</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>6</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/08%20-%20Stateless%20Functional%20Components.mp4</location>
+			<duration>302905</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>7</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/09%20-%20Routing%20with%20React%20Router.mp4</location>
+			<duration>516273</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>8</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/10%20-%20Helper%20and%20Utility%20Functions.mp4</location>
+			<duration>264081</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>9</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/11%20-%20Events,%20Refs%20and%20this%20Binding.mp4</location>
+			<duration>873814</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>10</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/12%20-%20Handling%20Events.mp4</location>
+			<duration>236449</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>11</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/13%20-%20Understanding%20State.mp4</location>
+			<duration>1558083</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>12</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/14%20-%20Loading%20data%20into%20state%20onClick.mp4</location>
+			<duration>219568</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>13</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/15%20-%20Displaying%20State%20with%20JSX.mp4</location>
+			<duration>767188</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>14</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/16%20-%20Updating%20our%20Order%20State.mp4</location>
+			<duration>707605</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>15</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/17%20-%20Displaying%20Order%20State%20with%20JSX.mp4</location>
+			<duration>1031268</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>16</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/18%20-%20Persisting%20our%20State%20with%20Firebase.mp4</location>
+			<duration>929936</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>17</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/19%20-%20Persisting%20Order%20State%20with%20localstorage.mp4</location>
+			<duration>722675</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>18</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/20%20-%20Bi-directional%20Data%20Flow%20and%20Live%20State%20Editing%20.mp4</location>
+			<duration>955223</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>19</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/21%20-%20Removing%20Items%20from%20State.mp4</location>
+			<duration>429152</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>20</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/22%20-%20Animating%20React%20Components.mp4</location>
+			<duration>1494181</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>21</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/23%20-%20Component%20Validation%20with%20PropTypes.mp4</location>
+			<duration>827676</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>22</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/24%20-%20Authentication.mp4</location>
+			<duration>1827341</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>23</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/25%20-%20Building%20React%20for%20Production.mp4</location>
+			<duration>214855</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>24</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/26%20-%20Deploying%20to%20Now.mp4</location>
+			<duration>334554</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>25</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/27%20-%20Deploying%20to%20Netlify.mp4</location>
+			<duration>200319</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>26</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/28%20-%20Deploying%20to%20an%20Apache%20Server.mp4</location>
+			<duration>219708</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>27</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///C:/Users/nfang/repos/classes/wesBos/reactForBeginners/videos/29%20-%20Ejecting%20from%20create-react-app.mp4</location>
+			<duration>302046</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>28</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+			<vlc:item tid="0"/>
+			<vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+			<vlc:item tid="3"/>
+			<vlc:item tid="4"/>
+			<vlc:item tid="5"/>
+			<vlc:item tid="6"/>
+			<vlc:item tid="7"/>
+			<vlc:item tid="8"/>
+			<vlc:item tid="9"/>
+			<vlc:item tid="10"/>
+			<vlc:item tid="11"/>
+			<vlc:item tid="12"/>
+			<vlc:item tid="13"/>
+			<vlc:item tid="14"/>
+			<vlc:item tid="15"/>
+			<vlc:item tid="16"/>
+			<vlc:item tid="17"/>
+			<vlc:item tid="18"/>
+			<vlc:item tid="19"/>
+			<vlc:item tid="20"/>
+			<vlc:item tid="21"/>
+			<vlc:item tid="22"/>
+			<vlc:item tid="23"/>
+			<vlc:item tid="24"/>
+			<vlc:item tid="25"/>
+			<vlc:item tid="26"/>
+			<vlc:item tid="27"/>
+			<vlc:item tid="28"/>
+	</extension>
+</playlist>
